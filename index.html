@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>받을각 - 내가 몰라서 못 받는 돈, AI가 찾아드립니다</title>
+<meta name="description" content="나이, 상황 몇 가지만 입력하면 AI가 내가 받을 수 있는 정부·지자체 지원금과 복지제도를 찾아드립니다.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232f6fed'/%3E%3Ctext x='50' y='68' font-size='52' font-weight='800' text-anchor='middle' fill='white' font-family='sans-serif'%3E각%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-decoration" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">각</span>
+      <span class="brand-name">받을각</span>
+    </div>
+    <span class="topbar-tag">K-AI 콘텐츠 공모전 · 솔루션 부문</span>
+  </div>
+</header>
+
+<main id="app">
+
+  <!-- ===== SCREEN 0: 인트로 ===== -->
+  <section class="screen" id="screen-intro" data-active="true">
+    <div class="hero">
+      <p class="hero-eyebrow">몰라서 못 받는 돈, 생각보다 많습니다</p>
+      <h1 class="hero-title">나한테 맞는 지원금,<br><span class="highlight">AI가 30초</span>만에 찾아드려요</h1>
+      <p class="hero-desc">
+        전국에 수백 개의 청년·복지·금융 지원제도가 있지만, 정작 자격이 되는 사람 절반은
+        존재조차 몰라서 못 받습니다. 나이·상황 몇 가지만 알려주시면
+        AI 매칭 엔진이 지금 내가 신청할 수 있는 제도를 찾아 쉬운 말로 알려드려요.
+      </p>
+      <button class="btn btn-primary btn-lg" id="btn-start">
+        내 혜택 찾으러 가기
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="privacy-note">🔒 로그인·인증서 없이 바로 시작. 입력한 정보는 <strong>브라우저 밖으로 전송되지 않아요.</strong></p>
+      <div class="hero-stats">
+        <div class="stat"><strong>18개</strong><span>실존 지원제도 수록</span></div>
+        <div class="stat"><strong>5문항</strong><span>30초면 충분</span></div>
+        <div class="stat"><strong>0건</strong><span>개인정보 수집·저장</span></div>
+        <div class="stat"><strong>100%</strong><span>공식 출처 기반</span></div>
+      </div>
+
+      <div class="compare">
+        <h2 class="compare-title">이미 보조금24·복지 앱이 있는데, 뭐가 다른가요?</h2>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <strong>로그인 장벽 제로</strong>
+            <p>기존 서비스는 공동인증서 로그인부터 막힙니다. 받을각은 아무것도 요구하지 않아요.</p>
+          </div>
+          <div class="compare-card">
+            <strong>관공서 용어 대신 쉬운 말</strong>
+            <p>"소득인정액", "차상위" 같은 말을 몰라도 내 상황을 고르기만 하면 됩니다.</p>
+          </div>
+          <div class="compare-card">
+            <strong>고민을 문장으로 이해</strong>
+            <p>"월세가 부담돼요"라고 쓰면, 그 고민에 맞는 제도부터 먼저 보여드려요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCREEN 1: 입력 폼 ===== -->
+  <section class="screen" id="screen-form">
+    <div class="form-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <p class="step-label" id="step-label">1 / 5</p>
+
+      <div class="q-block active" data-step="1">
+        <h2 class="q-title">나이대가 어떻게 되세요?</h2>
+        <div class="choice-grid" data-field="age">
+          <button class="choice-card" data-value="10s">10대</button>
+          <button class="choice-card" data-value="20s">20대</button>
+          <button class="choice-card" data-value="30s">30대</button>
+          <button class="choice-card" data-value="40s">40대</button>
+          <button class="choice-card" data-value="senior">60대 이상</button>
+        </div>
+      </div>
+
+      <div class="q-block" data-step="2">
+        <h2 class="q-title">지금 신분에 가장 가까운 건?</h2>
+        <div class="choice-grid" data-field="status">
+          <button class="choice-card" data-value="student">대학(원)생</button>
+          <button class="choice-card" data-value="jobseeker">취업준비생</button>
+          <button class="choice-card" data-value="worker">직장인</button>
+          <button class="choice-card" data-value="freelancer">프리랜서·자영업</button>
+          <button class="choice-card" data-value="unemployed">무직·구직중 아님</button>
+          <button class="choice-card" data-value="senior_life">어르신(만 65세+)</button>
+        </div>
+      </div>
+
+      <div class="q-block" data-step="3">
+        <h2 class="q-title">주거 상황은요?</h2>
+        <div class="choice-grid" data-field="housing">
+          <button class="choice-card" data-value="alone_rent">자취(월세/전세)</button>
+          <button class="choice-card" data-value="alone_own">자취(자가)</button>
+          <button class="choice-card" data-value="with_family">가족과 함께 거주</button>
+          <button class="choice-card" data-value="dorm">기숙사·고시원</button>
+        </div>
+      </div>
+
+      <div class="q-block" data-step="4">
+        <h2 class="q-title">소득 상황은 대략 어느 쪽에 가까운가요?</h2>
+        <p class="q-sub">정확하지 않아도 괜찮아요. 모르면 그냥 넘어가세요.</p>
+        <div class="choice-grid" data-field="income">
+          <button class="choice-card" data-value="low">기초수급·차상위 정도</button>
+          <button class="choice-card" data-value="mid_low">중위소득 100% 이하</button>
+          <button class="choice-card" data-value="mid">중위소득 100~150%</button>
+          <button class="choice-card" data-value="unknown">잘 모르겠음</button>
+        </div>
+      </div>
+
+      <div class="q-block" data-step="5">
+        <h2 class="q-title">요즘 가장 신경 쓰이는 걸 편하게 적어주세요</h2>
+        <p class="q-sub">예: "월세가 너무 부담돼요", "학자금 대출이 걱정이에요", "취업 준비 중인데 돈이 안 모여요"</p>
+        <textarea id="free-text" class="free-text" placeholder="여기에 편하게 적어주세요 (선택사항)" rows="3"></textarea>
+        <button class="btn btn-primary btn-lg" id="btn-submit">
+          AI 매칭 결과 보기
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn btn-ghost" id="btn-back" disabled>이전</button>
+      </div>
+      <p class="privacy-note privacy-note-sm">🔒 모든 분석은 이 브라우저 안에서만 이루어지고, 어디에도 저장되지 않아요.</p>
+    </div>
+  </section>
+
+  <!-- ===== SCREEN 2: 로딩 ===== -->
+  <section class="screen" id="screen-loading">
+    <div class="loading-wrap">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <p class="loading-text" id="loading-text">입력하신 상황을 분석하고 있어요…</p>
+    </div>
+  </section>
+
+  <!-- ===== SCREEN 3: 결과 ===== -->
+  <section class="screen" id="screen-result">
+    <div class="result-wrap">
+      <div class="result-header">
+        <p class="result-eyebrow" id="result-count-label">지금 상황에 맞는 제도를 찾았어요</p>
+        <h2 class="result-title">지금 신청 가능한 혜택 <span id="result-count">0</span>개</h2>
+        <button class="btn btn-ghost btn-sm" id="btn-restart">다시 진단하기</button>
+      </div>
+      <div class="result-persona-card">
+        <span class="persona-badge">분석 요약</span>
+        <p class="result-persona" id="result-persona"></p>
+      </div>
+      <div class="result-list" id="result-list"></div>
+      <div class="disclaimer">
+        ⚠️ 이 결과는 데모용 참고 정보입니다. 제도별 세부 자격 요건과 예산 소진 여부는
+        반드시 <strong>공식 신청처</strong>에서 최종 확인해 주세요. 본 서비스는 공공데이터포털,
+        복지로, 정부24, 청년정책통합정보포털 등의 공개 정보를 기반으로 제작되었습니다.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>받을각 — K-AI Contents Award 2026 출품작 · Made with 바이브코딩</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
