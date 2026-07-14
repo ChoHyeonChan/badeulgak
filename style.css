@@ -24,6 +24,10 @@
 
 * { box-sizing: border-box; }
 
+/* 모든 글자 크기를 rem으로 정의해, 이 기준값만 바꾸면 여백·박스는 그대로 두고
+   글자만 실제로 커진다 (브라우저 전체 확대와 다른 점). */
+html { font-size: 16px; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -34,8 +38,19 @@ html, body {
   overflow-x: hidden;
 }
 
-/* 큰 글씨 모드: 어르신·저시력 사용자를 위한 전체 확대 */
-html.large-text body { zoom: 1.22; }
+/* 화면이 짧아도 푸터가 본문을 따라 올라오지 않도록, 본문이 남은 높이를 차지한다 */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* width:100%가 없으면, flex 아이템의 auto 마진이 stretch를 막아
+   본문이 콘텐츠 폭만큼 쪼그라든다 (문항 화면에서 특히 눈에 띈다). */
+main { flex: 1 0 auto; width: 100%; }
+.site-footer { flex-shrink: 0; }
+
+/* 큰 글씨 모드: 배율 확대가 아니라 글자 크기 자체를 키운다 (어르신·저시력 사용자용) */
+html.large-text { font-size: 20px; }
 
 .bg-decoration { display: none; }
 
@@ -65,30 +80,36 @@ html.large-text body { zoom: 1.22; }
   justify-content: space-between;
   gap: 12px;
 }
-.brand { display: flex; align-items: center; gap: 9px; }
+.brand {
+  display: flex; align-items: center; gap: 9px;
+  background: none; border: none; padding: 0;
+  font-family: inherit; cursor: pointer;
+}
+.brand:hover .brand-name { color: var(--green); }
 .brand-mark {
-  width: 30px; height: 30px;
+  /* em 기준이라 큰 글씨 모드에서 로고도 글자와 함께 자연스럽게 커진다 */
+  width: 1.9em; height: 1.9em;
   background: var(--stamp);
   color: #fffefb;
   border-radius: 6px;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display);
-  font-weight: 800; font-size: 16px;
+  font-weight: 800; font-size: 1rem;
   box-shadow: inset 0 0 0 1.5px rgba(255,255,255,0.25);
 }
 .brand-name {
   font-family: var(--font-display);
-  font-weight: 700; font-size: 19px; letter-spacing: -0.01em;
+  font-weight: 700; font-size: 1.1875rem; letter-spacing: -0.01em;
 }
 .topbar-right { display: flex; align-items: center; gap: 12px; }
 .topbar-tag {
-  font-size: 11.5px; color: var(--ink-3); white-space: nowrap;
+  font-size: 0.71875rem; color: var(--ink-3); white-space: nowrap;
   letter-spacing: 0.02em;
 }
 
 .btn-fontsize {
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   color: var(--ink-2);
   background: transparent;
@@ -118,7 +139,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 /* ===== Hero / Intro ===== */
 .hero-eyebrow {
   display: inline-block;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   color: var(--stamp);
   letter-spacing: 0.06em;
@@ -128,7 +149,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 }
 .hero-title {
   font-family: var(--font-display);
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 1.32;
   font-weight: 700;
   letter-spacing: -0.015em;
@@ -140,7 +161,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   padding: 0 2px;
 }
 .hero-desc {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.75;
   color: var(--ink-2);
   max-width: 34em;
@@ -162,10 +183,10 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 .stat:last-child { border-right: none; margin-right: 0; }
 .stat strong {
   font-family: var(--font-display);
-  font-size: 22px; font-weight: 700; color: var(--ink);
+  font-size: 1.375rem; font-weight: 700; color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
-.stat span { font-size: 12.5px; color: var(--ink-3); }
+.stat span { font-size: 0.78125rem; color: var(--ink-3); }
 
 /* ===== Buttons ===== */
 .btn {
@@ -179,12 +200,12 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   background: var(--green); color: #fffefb;
 }
 .btn-primary:hover { background: var(--green-deep); }
-.btn-lg { padding: 16px 28px; font-size: 16px; }
-.btn-sm { padding: 8px 14px; font-size: 13px; }
+.btn-lg { padding: 16px 28px; font-size: 1rem; }
+.btn-sm { padding: 8px 14px; font-size: 0.8125rem; }
 .btn-ghost {
   background: transparent; color: var(--ink-2);
   border: 1.5px solid var(--line);
-  padding: 9px 16px; font-size: 14px;
+  padding: 9px 16px; font-size: 0.875rem;
 }
 .btn-ghost:hover { border-color: var(--ink-2); color: var(--ink); }
 .btn-ghost:disabled { opacity: 0.35; cursor: default; }
@@ -192,17 +213,17 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 /* ===== Privacy note ===== */
 .privacy-note {
   margin: 16px 0 0;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--ink-3);
 }
 .privacy-note strong { color: var(--green); }
-.privacy-note-sm { margin-top: 22px; font-size: 12px; }
+.privacy-note-sm { margin-top: 22px; font-size: 0.75rem; }
 
 /* ===== Persona / Compare ===== */
 .personas { margin-top: 56px; }
 .persona-chips { display: flex; flex-wrap: wrap; gap: 9px; }
 .persona-chip {
-  font-size: 13.5px;
+  font-size: 0.84375rem;
   font-weight: 600;
   color: var(--ink-2);
   background: var(--card);
@@ -214,7 +235,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 .compare { margin-top: 44px; }
 .compare-title {
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0 0 16px;
@@ -230,8 +251,8 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   border-radius: var(--radius);
   padding: 16px;
 }
-.compare-card strong { display: block; font-size: 14px; margin-bottom: 7px; color: var(--green); }
-.compare-card p { margin: 0; font-size: 13px; line-height: 1.65; color: var(--ink-3); }
+.compare-card strong { display: block; font-size: 0.875rem; margin-bottom: 7px; color: var(--green); }
+.compare-card p { margin: 0; font-size: 0.8125rem; line-height: 1.65; color: var(--ink-3); }
 @media (max-width: 560px) {
   .compare-grid { grid-template-columns: 1fr; }
 }
@@ -249,7 +270,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   transition: width 0.35s ease;
 }
 .step-label {
-  font-size: 12.5px; color: var(--ink-3); font-weight: 700;
+  font-size: 0.78125rem; color: var(--ink-3); font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
   margin: 0 0 30px;
@@ -259,10 +280,10 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 .q-block.active { display: block; animation: fadeUp 0.35s ease; }
 .q-title {
   font-family: var(--font-display);
-  font-size: 25px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 8px;
+  font-size: 1.5625rem; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 8px;
   text-wrap: balance;
 }
-.q-sub { font-size: 14px; color: var(--ink-3); margin: 0 0 20px; line-height: 1.6; }
+.q-sub { font-size: 0.875rem; color: var(--ink-3); margin: 0 0 20px; line-height: 1.6; }
 
 .choice-grid {
   display: grid;
@@ -276,7 +297,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   border: 1.5px solid var(--line);
   border-radius: 8px;
   padding: 17px 16px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--ink-2);
   cursor: pointer;
@@ -291,7 +312,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 .free-text {
   width: 100%;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.6;
   padding: 15px 16px;
   border: 1.5px solid var(--line);
@@ -321,18 +342,18 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   animation: spin 0.8s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
-.loading-text { font-size: 15px; font-weight: 600; color: var(--ink-2); }
+.loading-text { font-size: 0.9375rem; font-weight: 600; color: var(--ink-2); }
 
 /* ===== Result ===== */
 .result-header { margin-bottom: 26px; }
 .result-eyebrow {
-  color: var(--green); font-weight: 700; font-size: 13px;
+  color: var(--green); font-weight: 700; font-size: 0.8125rem;
   letter-spacing: 0.04em;
   margin: 0 0 8px;
 }
 .result-title {
   font-family: var(--font-display);
-  font-size: 29px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 16px;
+  font-size: 1.8125rem; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 16px;
 }
 .result-title span {
   background: linear-gradient(transparent 58%, var(--hl) 58%);
@@ -352,7 +373,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 }
 .persona-badge {
   display: inline-block;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   color: var(--green);
@@ -361,7 +382,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   border-radius: 4px;
   margin-bottom: 10px;
 }
-.result-persona { margin: 0; font-size: 14.5px; line-height: 1.75; color: var(--ink-2); }
+.result-persona { margin: 0; font-size: 0.90625rem; line-height: 1.75; color: var(--ink-2); }
 
 .result-list { display: flex; flex-direction: column; gap: 14px; }
 
@@ -377,31 +398,31 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   margin-bottom: 12px;
 }
 .agency-badge {
-  font-size: 11.5px; font-weight: 700; color: var(--ink-2);
+  font-size: 0.71875rem; font-weight: 700; color: var(--ink-2);
   background: var(--paper);
   border: 1px solid var(--line);
   padding: 3px 9px; border-radius: 4px;
   letter-spacing: 0.03em;
 }
 .match-badge {
-  font-size: 12px; font-weight: 600; color: var(--stamp);
+  font-size: 0.75rem; font-weight: 600; color: var(--stamp);
 }
 .match-badge::before { content: "추천 이유 — "; font-weight: 700; }
 .result-card-title {
   font-family: var(--font-display);
-  font-size: 19.5px; font-weight: 700; margin: 0 0 5px; letter-spacing: -0.01em;
+  font-size: 1.21875rem; font-weight: 700; margin: 0 0 5px; letter-spacing: -0.01em;
 }
-.result-card-tagline { font-size: 14px; color: var(--green); font-weight: 600; margin: 0 0 10px; }
+.result-card-tagline { font-size: 0.875rem; color: var(--green); font-weight: 600; margin: 0 0 10px; }
 .benefit-badge {
   display: inline;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 800;
   color: var(--ink);
   background: linear-gradient(transparent 52%, var(--hl) 52%);
   padding: 0 2px;
 }
 .result-card .benefit-badge { display: inline-block; margin: 0 0 12px; }
-.result-card-summary { font-size: 14px; line-height: 1.7; color: var(--ink-2); margin: 0 0 16px; }
+.result-card-summary { font-size: 0.875rem; line-height: 1.7; color: var(--ink-2); margin: 0 0 16px; }
 
 .result-card-footer {
   display: flex; align-items: flex-end; justify-content: space-between; gap: 12px;
@@ -409,11 +430,11 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   border-top: 1px dashed var(--line);
   padding-top: 14px;
 }
-.howto { display: flex; flex-direction: column; gap: 2px; font-size: 13px; }
+.howto { display: flex; flex-direction: column; gap: 2px; font-size: 0.8125rem; }
 .howto strong { color: var(--ink); }
 .howto span { color: var(--ink-3); }
 .source-link {
-  font-size: 13px; font-weight: 700; color: var(--green);
+  font-size: 0.8125rem; font-weight: 700; color: var(--green);
   text-decoration: underline;
   text-underline-offset: 3px;
   white-space: nowrap;
@@ -428,10 +449,10 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 }
 .extra-title {
   font-family: var(--font-display);
-  font-size: 19px; font-weight: 700; letter-spacing: -0.01em;
+  font-size: 1.1875rem; font-weight: 700; letter-spacing: -0.01em;
   margin: 0 0 6px;
 }
-.extra-note { font-size: 12.5px; color: var(--ink-3); margin: 0 0 16px; line-height: 1.65; }
+.extra-note { font-size: 0.78125rem; color: var(--ink-3); margin: 0 0 16px; line-height: 1.65; }
 .extra-list { display: flex; flex-direction: column; gap: 12px; }
 .extra-item {
   background: var(--card);
@@ -439,9 +460,9 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   border-radius: var(--radius);
   padding: 16px 18px;
 }
-.extra-item p { margin: 6px 0 8px; font-size: 13.5px; line-height: 1.65; color: var(--ink-2); }
+.extra-item p { margin: 6px 0 8px; font-size: 0.84375rem; line-height: 1.65; color: var(--ink-2); }
 .extra-item .extra-detail {
-  font-size: 12.5px;
+  font-size: 0.78125rem;
   color: var(--ink-3);
   border-left: 2px solid var(--line);
   padding-left: 10px;
@@ -458,7 +479,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   padding: 4px 18px;
 }
 .browse-all summary {
-  font-size: 14.5px;
+  font-size: 0.90625rem;
   font-weight: 700;
   color: var(--ink-2);
   cursor: pointer;
@@ -472,13 +493,13 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   padding-top: 10px;
 }
 .browse-item-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.browse-item-head strong { font-size: 14px; }
-.browse-item p { margin: 4px 0 0; font-size: 13px; color: var(--ink-3); }
-.browse-item .benefit-badge { font-size: 13px; }
+.browse-item-head strong { font-size: 0.875rem; }
+.browse-item p { margin: 4px 0 0; font-size: 0.8125rem; color: var(--ink-3); }
+.browse-item .benefit-badge { font-size: 0.8125rem; }
 
 .how-it-works {
   padding: 4px 0 16px;
-  font-size: 13.5px;
+  font-size: 0.84375rem;
   line-height: 1.75;
   color: var(--ink-2);
 }
@@ -488,7 +509,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 
 .disclaimer {
   margin-top: 30px;
-  font-size: 12.5px;
+  font-size: 0.78125rem;
   line-height: 1.75;
   color: var(--ink-3);
   border-top: 1px solid var(--line);
@@ -506,9 +527,9 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 }
 .empty-state h3 {
   font-family: var(--font-display);
-  font-size: 18px; font-weight: 700; margin: 0 0 8px;
+  font-size: 1.125rem; font-weight: 700; margin: 0 0 8px;
 }
-.empty-state p { margin: 0; font-size: 14px; line-height: 1.75; color: var(--ink-2); }
+.empty-state p { margin: 0; font-size: 0.875rem; line-height: 1.75; color: var(--ink-2); }
 .empty-state strong { color: var(--green); }
 
 /* ===== Footer ===== */
@@ -517,42 +538,47 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   margin-top: 60px;
   background: #f1efe7;
 }
+/* 진단 중(문항 선택·분석)에는 푸터를 감춘다 — 선택지에 집중해야 할 화면이라
+   긴 푸터가 올라와 있으면 방해가 된다. */
+body[data-screen="form"] .site-footer,
+body[data-screen="loading"] .site-footer { display: none; }
+
 .footer-inner {
   max-width: 720px;
   margin: 0 auto;
-  padding: 36px 20px 44px;
+  padding: 28px 20px 32px;
 }
-.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
 .footer-brand strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 17px; font-weight: 700; color: var(--ink);
+  font-size: 1.0625rem; font-weight: 700; color: var(--ink);
 }
-.footer-brand p { margin: 2px 0 0; font-size: 13px; color: var(--ink-3); }
+.footer-brand p { margin: 2px 0 0; font-size: 0.8125rem; color: var(--ink-3); }
 
 .footer-cols {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  padding-bottom: 26px;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--line);
 }
 .footer-col h4 {
-  font-size: 12px; font-weight: 800; color: var(--ink);
+  font-size: 0.75rem; font-weight: 800; color: var(--ink);
   letter-spacing: 0.04em;
   margin: 0 0 10px;
 }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
 .footer-col a {
-  font-size: 13px; color: var(--green); text-decoration: none;
+  font-size: 0.8125rem; color: var(--green); text-decoration: none;
   border-bottom: 1px solid transparent;
 }
 .footer-col a:hover { border-bottom-color: var(--green); }
-.footer-note { margin: 0; font-size: 13px; line-height: 1.7; color: var(--ink-3); }
+.footer-note { margin: 0; font-size: 0.8125rem; line-height: 1.7; color: var(--ink-3); }
 .footer-note strong { color: var(--ink-2); font-weight: 700; }
 
-.footer-bottom { padding-top: 20px; }
-.footer-bottom p { margin: 0 0 6px; font-size: 12.5px; line-height: 1.7; color: var(--ink-3); }
+.footer-bottom { padding-top: 16px; }
+.footer-bottom p { margin: 0 0 6px; font-size: 0.78125rem; line-height: 1.7; color: var(--ink-3); }
 .footer-meta { color: var(--ink-3); opacity: 0.75; }
 
 @media (max-width: 560px) {
@@ -561,7 +587,7 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 
 /* ===== Responsive ===== */
 @media (max-width: 480px) {
-  .hero-title { font-size: 31px; }
+  .hero-title { font-size: 1.9375rem; }
   .choice-grid { grid-template-columns: 1fr; }
   .result-card-footer { flex-direction: column; align-items: flex-start; }
   .topbar-tag { display: none; }
@@ -574,5 +600,5 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
   .screen { padding: 0; }
   .result-card { break-inside: avoid; }
   body { background: #fff; }
-  .source-link::after { content: " (" attr(href) ")"; font-weight: 400; font-size: 11px; color: #666; }
+  .source-link::after { content: " (" attr(href) ")"; font-weight: 400; font-size: 0.6875rem; color: #666; }
 }

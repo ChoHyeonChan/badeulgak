@@ -16,6 +16,8 @@
   function showScreen(name) {
     Object.values(screens).forEach((s) => s.removeAttribute("data-active"));
     screens[name].setAttribute("data-active", "true");
+    // 문항을 고르는 동안에는 푸터를 감춰 화면이 선택지에만 집중되게 한다 (CSS에서 처리)
+    document.body.dataset.screen = name;
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -63,6 +65,19 @@
     if (currentStep > 1) goToStep(resolveStep(currentStep - 1, -1));
   });
 
+  // 앞선 답변과 모순되는 선택지는 감춘다.
+  // (예: 20대라고 답했는데 "어르신(만 65세+)"을 고를 수 있으면 안 된다)
+  function syncStatusOptions() {
+    const senior = document.querySelector('.choice-card[data-value="senior_life"]');
+    if (!senior) return;
+    const allowed = state.age === "senior";
+    senior.style.display = allowed ? "" : "none";
+    if (!allowed && state.status === "senior_life") {
+      state.status = null;
+      senior.classList.remove("selected");
+    }
+  }
+
   // 선택형 문항: 카드 클릭 시 값 저장 후 자동으로 다음 단계로
   document.querySelectorAll(".choice-grid").forEach((grid) => {
     const field = grid.dataset.field;
@@ -72,11 +87,26 @@
       grid.querySelectorAll(".choice-card").forEach((c) => c.classList.remove("selected"));
       card.classList.add("selected");
       state[field] = card.dataset.value;
+      if (field === "age") syncStatusOptions();
       setTimeout(() => {
         if (currentStep < LAST_STEP) goToStep(resolveStep(currentStep + 1, +1));
       }, 220);
     });
   });
+
+  // 로고를 누르면 처음 화면으로 돌아간다
+  document.getElementById("btn-home").addEventListener("click", resetToIntro);
+
+  syncStatusOptions(); // 첫 로드 시에도 나이 미선택 상태에 맞춰 정리해 둔다
+
+  function resetToIntro() {
+    state.age = state.status = state.housing = state.income = state.child = null;
+    state.freeText = "";
+    document.getElementById("free-text").value = "";
+    document.querySelectorAll(".choice-card").forEach((c) => c.classList.remove("selected"));
+    syncStatusOptions();
+    showScreen("intro");
+  }
 
   document.getElementById("btn-submit").addEventListener("click", () => {
     state.freeText = document.getElementById("free-text").value.trim();
@@ -88,6 +118,7 @@
     state.freeText = "";
     document.getElementById("free-text").value = "";
     document.querySelectorAll(".choice-card").forEach((c) => c.classList.remove("selected"));
+    syncStatusOptions();
     showScreen("form");
     goToStep(1);
   });
@@ -432,6 +463,7 @@
     Object.assign(state, vals);
     const child = q.get("child");
     if (child === "yes" || child === "no") state.child = child;
+    syncStatusOptions();
     ["age", "status", "housing", "income", "child"].forEach((field) => {
       const grid = document.querySelector(`.choice-grid[data-field="${field}"]`);
       const card = grid && grid.querySelector(`.choice-card[data-value="${state[field]}"]`);
