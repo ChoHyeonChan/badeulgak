@@ -496,12 +496,67 @@ main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 }
 .disclaimer strong { color: var(--ink-2); }
 
+/* ===== Empty state ===== */
+.empty-state {
+  background: var(--card);
+  border: 1px dashed var(--line);
+  border-left: 4px solid var(--stamp);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.empty-state h3 {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 700; margin: 0 0 8px;
+}
+.empty-state p { margin: 0; font-size: 14px; line-height: 1.75; color: var(--ink-2); }
+.empty-state strong { color: var(--green); }
+
 /* ===== Footer ===== */
 .site-footer {
-  text-align: center;
-  font-size: 12px;
-  color: var(--ink-3);
-  padding: 24px 20px 40px;
+  border-top: 1px solid var(--line);
+  margin-top: 60px;
+  background: #f1efe7;
+}
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 36px 20px 44px;
+}
+.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.footer-brand strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 17px; font-weight: 700; color: var(--ink);
+}
+.footer-brand p { margin: 2px 0 0; font-size: 13px; color: var(--ink-3); }
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+}
+.footer-col h4 {
+  font-size: 12px; font-weight: 800; color: var(--ink);
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+.footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.footer-col a {
+  font-size: 13px; color: var(--green); text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.footer-col a:hover { border-bottom-color: var(--green); }
+.footer-note { margin: 0; font-size: 13px; line-height: 1.7; color: var(--ink-3); }
+.footer-note strong { color: var(--ink-2); font-weight: 700; }
+
+.footer-bottom { padding-top: 20px; }
+.footer-bottom p { margin: 0 0 6px; font-size: 12.5px; line-height: 1.7; color: var(--ink-3); }
+.footer-meta { color: var(--ink-3); opacity: 0.75; }
+
+@media (max-width: 560px) {
+  .footer-cols { grid-template-columns: 1fr; gap: 20px; }
 }
 
 /* ===== Responsive ===== */

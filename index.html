@@ -8,11 +8,11 @@
 <meta name="theme-color" content="#f6f4ee">
 <meta property="og:type" content="website">
 <meta property="og:title" content="받을각 - 내가 몰라서 못 받는 돈, AI가 찾아드립니다">
-<meta property="og:description" content="로그인도 개인정보도 없이, 5문항과 고민 한 줄로 지금 신청 가능한 지원제도를 30초 만에. 부모님 대신 진단해 드릴 수도 있어요.">
+<meta property="og:description" content="로그인도 개인정보도 없이, 몇 가지 문항과 고민 한 줄로 지금 신청 가능한 지원제도를 30초 만에. 부모님 대신 진단해 드릴 수도 있어요.">
 <meta property="og:image" content="https://chohyeonchan.github.io/badeulgak/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23bf3b2b'/%3E%3Ctext x='50' y='68' font-size='52' font-weight='800' text-anchor='middle' fill='%23fffefb' font-family='serif'%3E각%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -49,8 +49,8 @@
       </button>
       <p class="privacy-note">로그인·인증서 없이 바로 시작. 입력한 정보는 <strong>브라우저 밖으로 전송되지 않아요.</strong></p>
       <div class="hero-stats">
-        <div class="stat"><strong>480개</strong><span>정밀 큐레이션 19 + 공공데이터 461</span></div>
-        <div class="stat"><strong>5문항</strong><span>30초면 충분</span></div>
+        <div class="stat"><strong>481개</strong><span>정밀 큐레이션 20 + 공공데이터 461</span></div>
+        <div class="stat"><strong>6문항</strong><span>30초면 충분</span></div>
         <div class="stat"><strong>0건</strong><span>개인정보 수집·저장</span></div>
         <div class="stat"><strong>100%</strong><span>공식 출처 기반</span></div>
       </div>
@@ -89,15 +89,17 @@
   <section class="screen" id="screen-form">
     <div class="form-wrap">
       <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-      <p class="step-label" id="step-label">1 / 5</p>
+      <p class="step-label" id="step-label">1 / 6</p>
 
       <div class="q-block active" data-step="1">
         <h2 class="q-title">나이대가 어떻게 되세요?</h2>
+        <p class="q-sub">청년 대상 제도 대부분이 만 34세에서 끊기기 때문에 30대는 나눠서 여쭤봐요.</p>
         <div class="choice-grid" data-field="age">
           <button class="choice-card" data-value="10s">10대</button>
           <button class="choice-card" data-value="20s">20대</button>
-          <button class="choice-card" data-value="30s">30대</button>
-          <button class="choice-card" data-value="40s">40대</button>
+          <button class="choice-card" data-value="30s_early">30~34세</button>
+          <button class="choice-card" data-value="30s_late">35~39세</button>
+          <button class="choice-card" data-value="40_50s">40~50대</button>
           <button class="choice-card" data-value="senior">60대 이상</button>
         </div>
       </div>
@@ -105,6 +107,7 @@
       <div class="q-block" data-step="2">
         <h2 class="q-title">지금 신분에 가장 가까운 건?</h2>
         <div class="choice-grid" data-field="status">
+          <button class="choice-card" data-value="schooler">초·중·고 학생</button>
           <button class="choice-card" data-value="student">대학(원)생</button>
           <button class="choice-card" data-value="jobseeker">취업준비생</button>
           <button class="choice-card" data-value="worker">직장인</button>
@@ -136,6 +139,15 @@
       </div>
 
       <div class="q-block" data-step="5">
+        <h2 class="q-title">함께 사는 만 18세 미만 자녀가 있나요?</h2>
+        <p class="q-sub">손자·손녀를 키우고 계신 조손가구도 "네"로 선택해 주세요. 자녀가 있어야 신청할 수 있는 제도를 가려내기 위해 여쭤봐요.</p>
+        <div class="choice-grid" data-field="child">
+          <button class="choice-card" data-value="yes">네, 있어요</button>
+          <button class="choice-card" data-value="no">아니요, 없어요</button>
+        </div>
+      </div>
+
+      <div class="q-block" data-step="6">
         <h2 class="q-title">요즘 가장 신경 쓰이는 걸 편하게 적어주세요</h2>
         <p class="q-sub">예: "월세가 너무 부담돼요", "학자금 대출이 걱정이에요", "취업 준비 중인데 돈이 안 모여요"</p>
         <textarea id="free-text" class="free-text" placeholder="여기에 편하게 적어주세요 (선택사항)" rows="3"></textarea>
@@ -176,6 +188,14 @@
         <span class="persona-badge">분석 요약</span>
         <p class="result-persona" id="result-persona"></p>
       </div>
+      <div class="empty-state" id="empty-state" hidden>
+        <h3>지금 조건에 딱 맞는 제도를 찾지 못했어요</h3>
+        <p>
+          자격 요건이 맞지 않는 제도를 억지로 추천하지 않기 위해, 조건이 어긋나는 항목은 결과에서 뺐어요.
+          아래 <strong>공공데이터에서 더 찾은 제도</strong>와 <strong>전체 제도 목록</strong>을 살펴보시거나,
+          소득 문항을 "잘 모르겠음"으로 바꿔 다시 진단해 보세요.
+        </p>
+      </div>
       <div class="result-list" id="result-list"></div>
 
       <section class="extra-wrap" id="extra-wrap" hidden>
@@ -185,7 +205,7 @@
       </section>
 
       <details class="browse-all">
-        <summary>수록된 전체 지원제도 19개 한눈에 보기</summary>
+        <summary>수록된 전체 지원제도 20개 한눈에 보기</summary>
         <div class="browse-list" id="browse-list"></div>
       </details>
 
@@ -194,7 +214,7 @@
         <div class="how-it-works">
           <p><strong>입력하신 내용은 서버로 전송되지 않습니다.</strong> 진단은 전부 지금 보고 계신 브라우저 안에서 실행돼요.</p>
           <ol>
-            <li>연령·신분·주거·소득 네 가지 축으로 정밀 검증한 19개 제도의 자격 요건과 대조해 적합도를 점수로 매기고, 자격이 어긋나는 제도는 결과에서 제외합니다. 혜택 금액까지 표시되는 항목이 이 19개예요.</li>
+            <li>연령·신분·주거·소득·자녀 유무 다섯 가지 축으로 정밀 검증한 20개 제도의 자격 요건과 대조해 적합도를 점수로 매기고, 자격이 어긋나는 제도는 결과에서 제외합니다. 청년 제도 대부분이 만 34세에서 끊기므로 30대는 34세 기준으로 나눠 판정해요. 혜택 금액까지 표시되는 항목이 이 20개예요.</li>
             <li>적어주신 고민 문장에서 일상어 키워드(예: "방세", "취준", "힘들어요")를 인식해 그 고민과 관련된 제도의 순위를 끌어올립니다.</li>
             <li>여기에 더해, 복지로 중앙부처 복지서비스 공공데이터(공공데이터포털)를 매주 자동으로 받아와 461개 제도를 추가로 대조합니다. 이 항목들은 요약과 공식 링크만 제공해 정보 오차를 방지합니다.</li>
             <li>제도 정보는 복지로·정부24·고용24 등 공식 안내를 요약해 담았고, 카드마다 공식 신청처 링크를 달아 바로 확인할 수 있게 했습니다.</li>
@@ -214,11 +234,51 @@
 </main>
 
 <footer class="site-footer">
-  <p>받을각 — K-AI Contents Award 2026 출품작 · Made with 바이브코딩</p>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark">각</span>
+      <div>
+        <strong>받을각</strong>
+        <p>몰라서 못 받는 돈을, 아는 돈으로.</p>
+      </div>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>제도 정보 출처</h4>
+        <ul>
+          <li><a href="https://www.bokjiro.go.kr" target="_blank" rel="noopener noreferrer">복지로</a></li>
+          <li><a href="https://www.gov.kr" target="_blank" rel="noopener noreferrer">정부24</a></li>
+          <li><a href="https://www.work24.go.kr" target="_blank" rel="noopener noreferrer">고용24</a></li>
+          <li><a href="https://www.data.go.kr/data/15090532/openapi.do" target="_blank" rel="noopener noreferrer">공공데이터포털 API</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>데이터 갱신</h4>
+        <p class="footer-note">
+          복지로 중앙부처 복지서비스 <strong>461개</strong>를
+          매주 월요일 자동으로 다시 받아옵니다.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>개인정보</h4>
+        <p class="footer-note">
+          로그인·회원가입이 없고, 입력하신 내용은
+          <strong>서버로 전송되거나 저장되지 않습니다.</strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>이 서비스는 공식 신청 창구가 아닙니다. 최종 자격과 신청은 각 제도의 공식 신청처에서 확인해 주세요.</p>
+      <p class="footer-meta">2026 K-AI 콘텐츠 공모전 · 솔루션 부문 출품작 — 바이브코딩으로 제작</p>
+    </div>
+  </div>
 </footer>
 
-<script src="data.js"></script>
-<script src="data-extra.js"></script>
-<script src="app.js"></script>
+<!-- 버전 쿼리: 코드를 고쳤을 때 사용자 브라우저가 캐시된 옛 파일을 계속 쓰지 않도록 한다 -->
+<script src="data.js?v=2"></script>
+<script src="data-extra.js?v=2"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>

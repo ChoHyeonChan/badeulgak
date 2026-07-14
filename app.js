@@ -2,9 +2,9 @@
 (function () {
   "use strict";
 
-  const state = { age: null, status: null, housing: null, income: null, freeText: "" };
+  const state = { age: null, status: null, housing: null, income: null, child: null, freeText: "" };
   let currentStep = 1;
-  const TOTAL_STEPS = 5;
+  const LAST_STEP = 6; // 6단계(자유 고민)가 마지막. 5단계(자녀)는 해당 없으면 자동으로 건너뛴다.
 
   const screens = {
     intro: document.getElementById("screen-intro"),
@@ -19,13 +19,38 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  // 해당 나이대에 물어볼 필요가 없는 문항은 건너뛴다 (예: 10대·어르신에게 자녀 유무)
+  function shouldSkip(stepEl) {
+    const skipAges = (stepEl.dataset.skipWhenAge || "").split(",").filter(Boolean);
+    return skipAges.includes(state.age);
+  }
+
+  function stepEl(n) {
+    return document.querySelector(`.q-block[data-step="${n}"]`);
+  }
+
+  // dir: +1(다음) / -1(이전) — 건너뛸 문항을 지나 실제로 보여줄 단계를 찾는다
+  function resolveStep(n, dir) {
+    let target = n;
+    while (target > 1 && target < LAST_STEP && shouldSkip(stepEl(target))) {
+      target += dir;
+    }
+    return target;
+  }
+
   function goToStep(n) {
     currentStep = n;
     document.querySelectorAll(".q-block").forEach((el) => {
       el.classList.toggle("active", Number(el.dataset.step) === n);
     });
-    document.getElementById("step-label").textContent = `${n} / ${TOTAL_STEPS}`;
-    document.getElementById("progress-fill").style.width = `${(n / TOTAL_STEPS) * 100}%`;
+    // 건너뛰는 문항이 있으면 전체 개수도 줄여서 표시한다 (예: 5문항 / 6문항)
+    const total = Array.from(document.querySelectorAll(".q-block"))
+      .filter((el) => !shouldSkip(el)).length;
+    const shownIndex = Array.from(document.querySelectorAll(".q-block"))
+      .filter((el) => !shouldSkip(el))
+      .findIndex((el) => Number(el.dataset.step) === n) + 1;
+    document.getElementById("step-label").textContent = `${shownIndex} / ${total}`;
+    document.getElementById("progress-fill").style.width = `${(shownIndex / total) * 100}%`;
     document.getElementById("btn-back").disabled = n === 1;
   }
 
@@ -35,7 +60,7 @@
   });
 
   document.getElementById("btn-back").addEventListener("click", () => {
-    if (currentStep > 1) goToStep(currentStep - 1);
+    if (currentStep > 1) goToStep(resolveStep(currentStep - 1, -1));
   });
 
   // 선택형 문항: 카드 클릭 시 값 저장 후 자동으로 다음 단계로
@@ -48,7 +73,7 @@
       card.classList.add("selected");
       state[field] = card.dataset.value;
       setTimeout(() => {
-        if (currentStep < TOTAL_STEPS) goToStep(currentStep + 1);
+        if (currentStep < LAST_STEP) goToStep(resolveStep(currentStep + 1, +1));
       }, 220);
     });
   });
@@ -59,7 +84,7 @@
   });
 
   document.getElementById("btn-restart").addEventListener("click", () => {
-    state.age = state.status = state.housing = state.income = null;
+    state.age = state.status = state.housing = state.income = state.child = null;
     state.freeText = "";
     document.getElementById("free-text").value = "";
     document.querySelectorAll(".choice-card").forEach((c) => c.classList.remove("selected"));
@@ -71,6 +96,12 @@
   function scoreProgram(p) {
     let score = 0;
     const reasons = [];
+
+    // 자녀가 있어야만 신청 가능한 제도(자녀장려금 등)는 자녀가 없으면 후보에서 제외한다.
+    // 자녀 문항을 건너뛴 경우(10대·어르신)에도 추천하지 않는다.
+    if (p.requiresChild && state.child !== "yes") {
+      return { program: p, score: -100, reasons: [], hitKeywords: [] };
+    }
 
     // 자격 조건이 명시된 제도에서 조건 미충족은 강하게 감점해
     // "지금 조건이 맞는 제도"라는 약속을 지킨다.
@@ -122,9 +153,12 @@
     return { program: p, score, reasons, hitKeywords };
   }
 
-  const AGE_LABEL = { "10s": "10대", "20s": "20대", "30s": "30대", "40s": "40대", senior: "60대 이상" };
+  const AGE_LABEL = {
+    "10s": "10대", "20s": "20대", "30s_early": "30대 초반(~34세)",
+    "30s_late": "30대 후반(35~39세)", "40_50s": "40~50대", senior: "60대 이상",
+  };
   const STATUS_LABEL = {
-    student: "대학(원)생", jobseeker: "취업준비생", worker: "직장인",
+    schooler: "초·중·고 학생", student: "대학(원)생", jobseeker: "취업준비생", worker: "직장인",
     freelancer: "프리랜서·자영업", unemployed: "구직 비활동", senior_life: "어르신",
   };
   const HOUSING_LABEL = { alone_rent: "자취(월세/전세)", alone_own: "자취(자가)", with_family: "가족과 거주", dorm: "기숙사·고시원" };
@@ -166,10 +200,10 @@
 
     setTimeout(() => {
       clearInterval(interval);
+      // 자격이 맞는 제도만 보여준다. 개수를 채우려고 자격 미달 제도를 끼워 넣지 않는다 —
+      // "지금 신청 가능한 혜택"이라고 말해놓고 못 받는 걸 보여주면 서비스의 신뢰가 깨진다.
       const scored = PROGRAMS.map(scoreProgram).sort((a, b) => b.score - a.score);
-      let results = scored.filter((r) => r.score > 2);
-      if (results.length < 3) results = scored.slice(0, 4);
-      results = results.slice(0, 8);
+      const results = scored.filter((r) => r.score > 2).slice(0, 8);
       renderResults(results);
       showScreen("result");
       tryUpgradeSummaryWithLLM(results);
@@ -210,6 +244,12 @@
     const profile = [AGE_LABEL[state.age], STATUS_LABEL[state.status], HOUSING_LABEL[state.housing]]
       .filter(Boolean).join(" · ");
     const income = INCOME_LABEL[state.income] || "";
+    const child = state.child === "yes" ? " · 부양 자녀 있음" : "";
+
+    if (!results.length) {
+      return `${profile}${income ? ` (${income})` : ""}${child} 상황으로 19개 제도의 자격 요건을 대조했어요. ` +
+        `조건이 어긋나는 제도를 억지로 추천하지 않기 위해, 지금은 딱 맞는 항목을 비워 두었어요.`;
+    }
 
     const allHits = [...new Set(results.flatMap((r) => r.hitKeywords))];
     const concern = allHits.length
@@ -217,7 +257,7 @@
       : "";
 
     const agencies = [...new Set(results.map((r) => r.program.agency))];
-    return `${profile}${income ? ` (${income})` : ""} 상황을 분석했어요. ${concern}` +
+    return `${profile}${income ? ` (${income})` : ""}${child} 상황을 분석했어요. ${concern}` +
       `${agencies.slice(0, 3).join("·")} 등 ${agencies.length}개 기관의 제도 중에서 ` +
       `지금 조건이 맞는 ${results.length}개를 골랐어요. 위에서부터 매칭 점수가 높은 순서예요.`;
   }
@@ -228,6 +268,7 @@
     lastResults = results;
     document.getElementById("result-count").textContent = results.length;
     document.getElementById("result-persona").textContent = buildPersonaSummary(results);
+    document.getElementById("empty-state").hidden = results.length > 0;
     renderExtras();
     const list = document.getElementById("result-list");
     list.innerHTML = "";
@@ -275,8 +316,9 @@
   // ===== 공공데이터 추가 제도 (data-extra.js — GitHub Actions가 주 1회 자동 갱신) =====
   // 자동 수집분은 요약·링크만 신뢰하고, 금액 등 세부 표기는 하지 않는다.
   const LIFE_BY_AGE = {
-    "10s": ["청소년", "아동"], "20s": ["청년"], "30s": ["청년", "중장년"],
-    "40s": ["중장년"], senior: ["노년"],
+    "10s": ["청소년", "아동"], "20s": ["청년"],
+    "30s_early": ["청년", "중장년"], "30s_late": ["청년", "중장년"],
+    "40_50s": ["중장년"], senior: ["노년"],
   };
 
   function renderExtras() {
@@ -345,7 +387,8 @@
   document.getElementById("btn-copy").addEventListener("click", () => {
     // 공유 링크에는 선택 답변만 담고, 자유 고민 텍스트는 넣지 않는다 (프라이버시)
     const shareURL = `${location.origin}${location.pathname}` +
-      `?age=${state.age}&status=${state.status}&housing=${state.housing}&income=${state.income}`;
+      `?age=${state.age}&status=${state.status}&housing=${state.housing}&income=${state.income}` +
+      (state.child ? `&child=${state.child}` : "");
     const lines = [
       "[받을각] 맞춤 지원제도 진단 결과",
       document.getElementById("result-persona").textContent,
@@ -387,7 +430,9 @@
       HOUSING_LABEL[vals.housing] && INCOME_LABEL[vals.income];
     if (!valid) return;
     Object.assign(state, vals);
-    ["age", "status", "housing", "income"].forEach((field) => {
+    const child = q.get("child");
+    if (child === "yes" || child === "no") state.child = child;
+    ["age", "status", "housing", "income", "child"].forEach((field) => {
       const grid = document.querySelector(`.choice-grid[data-field="${field}"]`);
       const card = grid && grid.querySelector(`.choice-card[data-value="${state[field]}"]`);
       if (card) card.classList.add("selected");
