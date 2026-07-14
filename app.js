@@ -124,52 +124,45 @@
   });
 
   // ===== 매칭 로직 =====
+  //
+  // 자격 요건은 "점수"가 아니라 "된다/안 된다"의 문제다.
+  // 다른 항목에서 점수를 많이 받았다고 해서 못 받는 제도를 추천해서는 안 되므로,
+  // (1) 자격 요건은 하드 필터로 먼저 걸러내고
+  // (2) 통과한 제도들끼리만 점수로 순위를 매긴다.
+  //
+  // 예외: 소득을 "잘 모르겠음"으로 답한 경우에는 소득 요건을 판단할 수 없으므로
+  //       가능성을 닫지 않고 후보로 남겨둔다(대신 결과에 확인 필요 문구를 노출).
+  function isEligible(p) {
+    if (p.requiresChild && state.child !== "yes") return false;
+    if (!p.ages.includes(state.age)) return false;
+    if (p.statuses.length && !p.statuses.includes(state.status)) return false;
+    if (p.housing.length && !p.housing.includes(state.housing)) return false;
+    if (p.incomes.length && state.income !== "unknown" && !p.incomes.includes(state.income)) return false;
+    return true;
+  }
+
   function scoreProgram(p) {
     let score = 0;
     const reasons = [];
 
-    // 자녀가 있어야만 신청 가능한 제도(자녀장려금 등)는 자녀가 없으면 후보에서 제외한다.
-    // 자녀 문항을 건너뛴 경우(10대·어르신)에도 추천하지 않는다.
-    if (p.requiresChild && state.child !== "yes") {
-      return { program: p, score: -100, reasons: [], hitKeywords: [] };
-    }
-
-    // 자격 조건이 명시된 제도에서 조건 미충족은 강하게 감점해
-    // "지금 조건이 맞는 제도"라는 약속을 지킨다.
-    if (p.ages.includes(state.age)) {
-      score += 3;
-      reasons.push("age");
-    } else {
-      score -= 5;
-    }
-    if (p.statuses.length === 0) {
-      score += 1;
-    } else if (p.statuses.includes(state.status)) {
+    // 여기 오는 제도는 이미 자격을 통과했다. 점수는 "얼마나 잘 맞는지" 순위용이다.
+    if (p.ages.includes(state.age)) reasons.push("age");
+    if (p.statuses.length && p.statuses.includes(state.status)) {
       score += 3;
       reasons.push("status");
-    } else {
-      score -= 4;
     }
-
-    if (p.housing.length === 0) {
-      score += 1;
-    } else if (p.housing.includes(state.housing)) {
+    if (p.housing.length && p.housing.includes(state.housing)) {
       score += 2;
       reasons.push("housing");
-    } else {
-      score -= 10; // 주거 요건(예: 월세 거주)이 필수인 제도는 미충족 시 제외
     }
-
-    if (p.incomes.length === 0) {
-      score += 1;
-    } else if (p.incomes.includes(state.income)) {
+    if (p.incomes.length && p.incomes.includes(state.income)) {
       score += 2;
       reasons.push("income");
-    } else if (state.income === "unknown") {
-      score += 1; // 소득을 모르면 가능성을 열어두고 보여준다
-    } else {
-      score -= 5;
     }
+    // 소득 미상으로 통과한 경우: 순위는 낮추되 후보로는 남긴다
+    const incomeUnverified =
+      p.incomes.length > 0 && state.income === "unknown";
+    if (incomeUnverified) score -= 1;
 
     const hitKeywords = [];
     if (state.freeText) {
@@ -177,11 +170,11 @@
       p.keywords.forEach((kw) => {
         if (text.includes(kw.toLowerCase())) hitKeywords.push(kw);
       });
-      score += hitKeywords.length * 4;
+      score += hitKeywords.length * 4; // 직접 적어준 고민을 가장 무겁게 본다
       if (hitKeywords.length > 0) reasons.push("keyword");
     }
 
-    return { program: p, score, reasons, hitKeywords };
+    return { program: p, score, reasons, hitKeywords, incomeUnverified };
   }
 
   const AGE_LABEL = {
@@ -198,20 +191,19 @@
     mid: "중위소득 100~150%", unknown: "소득 미확인",
   };
 
+  // 추천 이유는 "이 카드가 다른 카드와 다른 이유"만 말한다.
+  // 나이·신분은 이미 하드 필터로 걸러져 모든 결과에 해당하므로, 반복해 봐야 정보가 없다.
   function buildReasonText(r) {
     const parts = [];
-    if (r.reasons.includes("age") || r.reasons.includes("status")) {
-      const ageTxt = AGE_LABEL[state.age] || "";
-      const statusTxt = STATUS_LABEL[state.status] || "";
-      parts.push(`${ageTxt} ${statusTxt}`.trim() + "에게 해당하는 제도예요");
+    if (r.reasons.includes("keyword")) {
+      parts.push(`적어주신 "${r.hitKeywords.slice(0, 2).join(", ")}"와(과) 관련 있어요`);
     }
     if (r.reasons.includes("housing")) {
-      parts.push(`${HOUSING_LABEL[state.housing]} 조건과 맞아요`);
+      parts.push(`${HOUSING_LABEL[state.housing]} 조건에 해당해요`);
     }
-    if (r.reasons.includes("keyword")) {
-      parts.push(`"${r.hitKeywords.slice(0, 2).join(", ")}" 라고 적어주신 내용과 관련 있어요`);
+    if (r.reasons.includes("income")) {
+      parts.push("소득 요건을 충족해요");
     }
-    if (parts.length === 0) parts.push("폭넓은 대상에게 열려 있는 제도예요");
     return parts.join(" · ");
   }
 
@@ -231,10 +223,12 @@
 
     setTimeout(() => {
       clearInterval(interval);
-      // 자격이 맞는 제도만 보여준다. 개수를 채우려고 자격 미달 제도를 끼워 넣지 않는다 —
-      // "지금 신청 가능한 혜택"이라고 말해놓고 못 받는 걸 보여주면 서비스의 신뢰가 깨진다.
-      const scored = PROGRAMS.map(scoreProgram).sort((a, b) => b.score - a.score);
-      const results = scored.filter((r) => r.score > 2).slice(0, 8);
+      // 자격을 통과한 제도만 점수로 정렬해 보여준다. 개수를 채우려고 자격 미달 제도를
+      // 끼워 넣지 않는다 — "지금 신청 가능한 혜택"이라 해놓고 못 받는 걸 보여주면 신뢰가 깨진다.
+      const results = PROGRAMS.filter(isEligible)
+        .map(scoreProgram)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 8);
       renderResults(results);
       showScreen("result");
       tryUpgradeSummaryWithLLM(results);
@@ -278,7 +272,7 @@
     const child = state.child === "yes" ? " · 부양 자녀 있음" : "";
 
     if (!results.length) {
-      return `${profile}${income ? ` (${income})` : ""}${child} 상황으로 19개 제도의 자격 요건을 대조했어요. ` +
+      return `${profile}${income ? ` (${income})` : ""}${child} 상황으로 20개 제도의 자격 요건을 대조했어요. ` +
         `조건이 어긋나는 제도를 억지로 추천하지 않기 위해, 지금은 딱 맞는 항목을 비워 두었어요.`;
     }
 
@@ -300,6 +294,16 @@
     document.getElementById("result-count").textContent = results.length;
     document.getElementById("result-persona").textContent = buildPersonaSummary(results);
     document.getElementById("empty-state").hidden = results.length > 0;
+    // 소득을 "잘 모르겠음"으로 답해 소득 요건 확인 없이 통과한 항목이 있으면,
+    // 카드마다 같은 문구를 반복하지 말고 결과 상단에서 한 번만 알린다.
+    const unverified = results.filter((r) => r.incomeUnverified).length;
+    const note = document.getElementById("income-notice");
+    note.hidden = unverified === 0;
+    if (unverified > 0) {
+      note.textContent =
+        `소득을 "잘 모르겠음"으로 답하셔서, 소득 기준이 있는 제도 ${unverified}개도 우선 함께 보여드려요. ` +
+        `신청 전에 각 제도의 소득 요건을 확인해 주세요.`;
+    }
     renderExtras();
     const list = document.getElementById("result-list");
     list.innerHTML = "";
@@ -309,10 +313,11 @@
       const card = document.createElement("article");
       card.className = "result-card";
       card.style.animationDelay = `${idx * 60}ms`;
+      const reason = buildReasonText(r); // 특별히 내세울 이유가 없으면 배지를 아예 달지 않는다
       card.innerHTML = `
         <div class="result-card-top">
           <span class="agency-badge">${escapeHtml(p.agency)}</span>
-          <span class="match-badge">${escapeHtml(buildReasonText(r))}</span>
+          ${reason ? `<span class="match-badge">${escapeHtml(reason)}</span>` : ""}
         </div>
         <h3 class="result-card-title">${escapeHtml(p.name)}</h3>
         <p class="result-card-tagline">${escapeHtml(p.tagline)}</p>
