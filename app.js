@@ -222,9 +222,13 @@
       `지금 조건이 맞는 ${results.length}개를 골랐어요. 위에서부터 매칭 점수가 높은 순서예요.`;
   }
 
+  let lastResults = []; // 복사·인쇄용으로 마지막 결과를 보관 (브라우저 메모리에만 존재)
+
   function renderResults(results) {
+    lastResults = results;
     document.getElementById("result-count").textContent = results.length;
     document.getElementById("result-persona").textContent = buildPersonaSummary(results);
+    renderExtras();
     const list = document.getElementById("result-list");
     list.innerHTML = "";
 
@@ -236,14 +240,15 @@
       card.innerHTML = `
         <div class="result-card-top">
           <span class="agency-badge">${escapeHtml(p.agency)}</span>
-          <span class="match-badge">매칭 이유: ${escapeHtml(buildReasonText(r))}</span>
+          <span class="match-badge">${escapeHtml(buildReasonText(r))}</span>
         </div>
         <h3 class="result-card-title">${escapeHtml(p.name)}</h3>
         <p class="result-card-tagline">${escapeHtml(p.tagline)}</p>
+        <span class="benefit-badge">${escapeHtml(p.benefit)}</span>
         <p class="result-card-summary">${escapeHtml(p.summary)}</p>
         <div class="result-card-footer">
           <div class="howto"><strong>신청 방법</strong><span>${escapeHtml(p.howTo)}</span></div>
-          <a class="source-link" href="${p.sourceUrl}" target="_blank" rel="noopener noreferrer">
+          <a class="source-link" href="${safeHref(p.sourceUrl)}" target="_blank" rel="noopener noreferrer">
             ${escapeHtml(p.sourceName)}에서 확인하기 ↗
           </a>
         </div>
@@ -257,4 +262,152 @@
     div.textContent = str;
     return div.innerHTML;
   }
+
+  // href="..." 처럼 속성값 컨텍스트에 넣을 때는 escapeHtml만으로는 부족하다
+  // (따옴표를 이스케이프하지 않아 속성 탈출이 가능함). 여기서 추가로 따옴표를 인코딩하고,
+  // http(s)가 아닌 스킴(javascript: 등)은 통째로 차단한다.
+  // data-extra.js는 사람 검토 없이 매주 외부 API로 자동 갱신되는 데이터라 특히 중요하다.
+  function safeHref(url) {
+    if (!/^https:\/\//i.test(url || "")) return "#";
+    return escapeHtml(url).replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  // ===== 공공데이터 추가 제도 (data-extra.js — GitHub Actions가 주 1회 자동 갱신) =====
+  // 자동 수집분은 요약·링크만 신뢰하고, 금액 등 세부 표기는 하지 않는다.
+  const LIFE_BY_AGE = {
+    "10s": ["청소년", "아동"], "20s": ["청년"], "30s": ["청년", "중장년"],
+    "40s": ["중장년"], senior: ["노년"],
+  };
+
+  function renderExtras() {
+    const wrap = document.getElementById("extra-wrap");
+    if (typeof EXTRA_PROGRAMS === "undefined" || !EXTRA_PROGRAMS.length) {
+      wrap.hidden = true;
+      return;
+    }
+    const curatedNames = PROGRAMS.map((p) => p.name.replace(/\s/g, ""));
+    const lifeWants = LIFE_BY_AGE[state.age] || [];
+    const tokens = state.freeText
+      ? state.freeText.split(/[\s,.!?~에가이은는을를도의로]+/).filter((t) => t.length >= 2)
+      : [];
+
+    const picked = EXTRA_PROGRAMS.map((x) => {
+      let s = 0;
+      // 생애주기가 5개 이상(사실상 전 연령 대상)이면 "나이 맞춤" 신호로 보지 않는다 —
+      // 그런 제도는 나이와 무관한 사유(사고 피해, 재난 등)로 열려 있는 경우가 대부분이라
+      // 매칭 근거로 삼으면 엉뚱한 추천이 된다.
+      const stages = x.life ? x.life.split(",").map((v) => v.trim()).filter(Boolean) : [];
+      if (stages.length > 0 && stages.length < 5) {
+        s += lifeWants.some((w) => stages.includes(w)) ? 3 : -6;
+      }
+      if (x.target && x.target.includes("저소득")) {
+        if (state.income === "low" || state.income === "mid_low") s += 2;
+        else if (state.income !== "unknown") s -= 4;
+      }
+      const hay = (x.name + " " + x.summary + " " + (x.theme || "") + " " + (x.content || "")).toLowerCase();
+      tokens.forEach((t) => { if (hay.includes(t.toLowerCase())) s += 2; });
+      return { x, s };
+    })
+      .filter((r) => r.s >= 5) // 소득 조건 단독 일치(+2)만으로는 노출하지 않는다
+      .filter((r) => {
+        const n = r.x.name.replace(/\s/g, "");
+        return !curatedNames.some((c) => c.includes(n) || n.includes(c));
+      })
+      .sort((a, b) => b.s - a.s)
+      .slice(0, 6);
+
+    if (!picked.length) {
+      wrap.hidden = true;
+      return;
+    }
+    const list = document.getElementById("extra-list");
+    list.innerHTML = "";
+    picked.forEach(({ x }) => {
+      const item = document.createElement("article");
+      item.className = "extra-item";
+      item.innerHTML = `
+        <div class="browse-item-head">
+          <strong>${escapeHtml(x.name)}</strong>
+          <span class="agency-badge">${escapeHtml(x.agency || "중앙부처")}</span>
+        </div>
+        <p>${escapeHtml(x.summary)}</p>
+        ${x.content ? `<p class="extra-detail"><strong>지원내용</strong> ${escapeHtml(x.content)}</p>` : ""}
+        ${x.target_detail ? `<p class="extra-detail"><strong>지원대상</strong> ${escapeHtml(x.target_detail)}</p>` : ""}
+        ${x.criteria ? `<p class="extra-detail"><strong>선정기준</strong> ${escapeHtml(x.criteria)}</p>` : ""}
+        ${x.link ? `<a class="source-link" href="${safeHref(x.link)}" target="_blank" rel="noopener noreferrer">복지로에서 자세히 보기</a>` : ""}
+      `;
+      list.appendChild(item);
+    });
+    wrap.hidden = false;
+  }
+
+  // ===== 결과 복사 (가족·친구 대신 진단해주고 공유하는 용도) =====
+  document.getElementById("btn-copy").addEventListener("click", () => {
+    // 공유 링크에는 선택 답변만 담고, 자유 고민 텍스트는 넣지 않는다 (프라이버시)
+    const shareURL = `${location.origin}${location.pathname}` +
+      `?age=${state.age}&status=${state.status}&housing=${state.housing}&income=${state.income}`;
+    const lines = [
+      "[받을각] 맞춤 지원제도 진단 결과",
+      document.getElementById("result-persona").textContent,
+      "",
+      ...lastResults.map((r, i) => {
+        const p = r.program;
+        return `${i + 1}. ${p.name} (${p.agency})\n   혜택: ${p.benefit}\n   신청: ${p.howTo}\n   확인: ${p.sourceUrl}`;
+      }),
+      "",
+      `같은 조건으로 직접 진단해보기: ${shareURL}`,
+      "※ 세부 자격과 모집 여부는 공식 신청처에서 꼭 확인하세요.",
+    ].join("\n");
+    const btn = document.getElementById("btn-copy");
+    const orig = btn.textContent;
+    navigator.clipboard.writeText(lines)
+      .then(() => { btn.textContent = "복사 완료"; })
+      .catch(() => { btn.textContent = "복사 실패 — 브라우저 권한을 확인해주세요"; })
+      .finally(() => setTimeout(() => (btn.textContent = orig), 1800));
+  });
+
+  // ===== 결과 인쇄 (어르신께 종이로 뽑아드리기) =====
+  document.getElementById("btn-print").addEventListener("click", () => window.print());
+
+  // ===== 큰 글씨 모드 =====
+  document.getElementById("btn-fontsize").addEventListener("click", () => {
+    const on = document.documentElement.classList.toggle("large-text");
+    document.getElementById("btn-fontsize").setAttribute("aria-pressed", on);
+  });
+
+  // ===== 공유 링크로 진입 시 진단 조건 복원 =====
+  // (가족·친구가 보내준 링크 — 선택 답변만 담기며 고민 텍스트는 포함되지 않음)
+  function restoreFromURL() {
+    const q = new URLSearchParams(location.search);
+    const vals = {
+      age: q.get("age"), status: q.get("status"),
+      housing: q.get("housing"), income: q.get("income"),
+    };
+    const valid = AGE_LABEL[vals.age] && STATUS_LABEL[vals.status] &&
+      HOUSING_LABEL[vals.housing] && INCOME_LABEL[vals.income];
+    if (!valid) return;
+    Object.assign(state, vals);
+    ["age", "status", "housing", "income"].forEach((field) => {
+      const grid = document.querySelector(`.choice-grid[data-field="${field}"]`);
+      const card = grid && grid.querySelector(`.choice-card[data-value="${state[field]}"]`);
+      if (card) card.classList.add("selected");
+    });
+    runMatching();
+  }
+  restoreFromURL();
+
+  // ===== 전체 제도 둘러보기 =====
+  const browseList = document.getElementById("browse-list");
+  PROGRAMS.forEach((p) => {
+    const item = document.createElement("div");
+    item.className = "browse-item";
+    item.innerHTML = `
+      <div class="browse-item-head">
+        <strong>${escapeHtml(p.name)}</strong>
+        <span class="agency-badge">${escapeHtml(p.agency)}</span>
+      </div>
+      <p>${escapeHtml(p.tagline)} · <span class="benefit-badge">${escapeHtml(p.benefit)}</span></p>
+    `;
+    browseList.appendChild(item);
+  });
 })();

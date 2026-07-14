@@ -1,0 +1,40 @@
+# 복지로 공공데이터 주기 갱신 파이프라인
+# 매주 월요일 오전 6시(KST)에 중앙부처 복지서비스 목록을 받아 data-extra.js를 갱신합니다.
+# 필요 설정: 저장소 Settings → Secrets → Actions → DATA_GO_KR_KEY (공공데이터포털 인증키)
+
+name: update-welfare-data
+
+on:
+  schedule:
+    - cron: "0 21 * * 0" # 일요일 21:00 UTC = 월요일 06:00 KST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch welfare data
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: node scripts/fetch-data.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name "welfare-data-bot"
+          git config user.email "actions@github.com"
+          if ! git diff --quiet data-extra.js; then
+            git add data-extra.js
+            git commit -m "chore: 복지로 공공데이터 주간 갱신"
+            git push
+          else
+            echo "변경 없음 — 커밋 생략"
+          fi

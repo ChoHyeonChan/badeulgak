@@ -5,7 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>받을각 - 내가 몰라서 못 받는 돈, AI가 찾아드립니다</title>
 <meta name="description" content="나이, 상황 몇 가지만 입력하면 AI가 내가 받을 수 있는 정부·지자체 지원금과 복지제도를 찾아드립니다.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232f6fed'/%3E%3Ctext x='50' y='68' font-size='52' font-weight='800' text-anchor='middle' fill='white' font-family='sans-serif'%3E각%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#f6f4ee">
+<meta property="og:type" content="website">
+<meta property="og:title" content="받을각 - 내가 몰라서 못 받는 돈, AI가 찾아드립니다">
+<meta property="og:description" content="로그인도 개인정보도 없이, 5문항과 고민 한 줄로 지금 신청 가능한 지원제도를 30초 만에. 부모님 대신 진단해 드릴 수도 있어요.">
+<meta property="og:image" content="https://chohyeonchan.github.io/badeulgak/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23bf3b2b'/%3E%3Ctext x='50' y='68' font-size='52' font-weight='800' text-anchor='middle' fill='%23fffefb' font-family='serif'%3E각%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,7 +24,10 @@
       <span class="brand-mark">각</span>
       <span class="brand-name">받을각</span>
     </div>
-    <span class="topbar-tag">K-AI 콘텐츠 공모전 · 솔루션 부문</span>
+    <div class="topbar-right">
+      <button class="btn-fontsize" id="btn-fontsize" aria-pressed="false" title="글씨 크게 보기">가<span class="fontsize-plus">+</span> 큰 글씨</button>
+      <span class="topbar-tag">K-AI 콘텐츠 공모전 · 솔루션 부문</span>
+    </div>
   </div>
 </header>
 
@@ -36,14 +45,24 @@
       </p>
       <button class="btn btn-primary btn-lg" id="btn-start">
         내 혜택 찾으러 가기
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <p class="privacy-note">🔒 로그인·인증서 없이 바로 시작. 입력한 정보는 <strong>브라우저 밖으로 전송되지 않아요.</strong></p>
+      <p class="privacy-note">로그인·인증서 없이 바로 시작. 입력한 정보는 <strong>브라우저 밖으로 전송되지 않아요.</strong></p>
       <div class="hero-stats">
-        <div class="stat"><strong>18개</strong><span>실존 지원제도 수록</span></div>
+        <div class="stat"><strong>480개</strong><span>정밀 큐레이션 19 + 공공데이터 461</span></div>
         <div class="stat"><strong>5문항</strong><span>30초면 충분</span></div>
         <div class="stat"><strong>0건</strong><span>개인정보 수집·저장</span></div>
         <div class="stat"><strong>100%</strong><span>공식 출처 기반</span></div>
+      </div>
+
+      <div class="personas">
+        <h2 class="compare-title">이런 분들께 필요해요</h2>
+        <div class="persona-chips">
+          <span class="persona-chip">등록금·월세에 허덕이는 대학생</span>
+          <span class="persona-chip">수입이 끊긴 취업준비생</span>
+          <span class="persona-chip">뭐가 있는지 모르는 우리 부모님</span>
+          <span class="persona-chip">부모님 대신 챙겨드리고 싶은 자녀</span>
+        </div>
       </div>
 
       <div class="compare">
@@ -122,14 +141,14 @@
         <textarea id="free-text" class="free-text" placeholder="여기에 편하게 적어주세요 (선택사항)" rows="3"></textarea>
         <button class="btn btn-primary btn-lg" id="btn-submit">
           AI 매칭 결과 보기
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
 
       <div class="form-nav">
         <button class="btn btn-ghost" id="btn-back" disabled>이전</button>
       </div>
-      <p class="privacy-note privacy-note-sm">🔒 모든 분석은 이 브라우저 안에서만 이루어지고, 어디에도 저장되지 않아요.</p>
+      <p class="privacy-note privacy-note-sm">모든 분석은 이 브라우저 안에서만 이루어지고, 어디에도 저장되지 않아요.</p>
     </div>
   </section>
 
@@ -147,15 +166,45 @@
       <div class="result-header">
         <p class="result-eyebrow" id="result-count-label">지금 상황에 맞는 제도를 찾았어요</p>
         <h2 class="result-title">지금 신청 가능한 혜택 <span id="result-count">0</span>개</h2>
-        <button class="btn btn-ghost btn-sm" id="btn-restart">다시 진단하기</button>
+        <div class="result-actions">
+          <button class="btn btn-ghost btn-sm" id="btn-copy">결과 복사해서 공유</button>
+          <button class="btn btn-ghost btn-sm" id="btn-print">인쇄해서 드리기</button>
+          <button class="btn btn-ghost btn-sm" id="btn-restart">다시 진단하기</button>
+        </div>
       </div>
       <div class="result-persona-card">
         <span class="persona-badge">분석 요약</span>
         <p class="result-persona" id="result-persona"></p>
       </div>
       <div class="result-list" id="result-list"></div>
+
+      <section class="extra-wrap" id="extra-wrap" hidden>
+        <h3 class="extra-title">공공데이터에서 더 찾은 제도</h3>
+        <p class="extra-note">복지로 중앙부처 복지서비스 목록(공공데이터포털)에서 매주 자동 수집한 정보예요. 요약만 제공되니 자세한 자격·금액은 링크에서 확인하세요.</p>
+        <div class="extra-list" id="extra-list"></div>
+      </section>
+
+      <details class="browse-all">
+        <summary>수록된 전체 지원제도 19개 한눈에 보기</summary>
+        <div class="browse-list" id="browse-list"></div>
+      </details>
+
+      <details class="browse-all">
+        <summary>이 진단, 어떻게 이루어졌나요?</summary>
+        <div class="how-it-works">
+          <p><strong>입력하신 내용은 서버로 전송되지 않습니다.</strong> 진단은 전부 지금 보고 계신 브라우저 안에서 실행돼요.</p>
+          <ol>
+            <li>연령·신분·주거·소득 네 가지 축으로 정밀 검증한 19개 제도의 자격 요건과 대조해 적합도를 점수로 매기고, 자격이 어긋나는 제도는 결과에서 제외합니다. 혜택 금액까지 표시되는 항목이 이 19개예요.</li>
+            <li>적어주신 고민 문장에서 일상어 키워드(예: "방세", "취준", "힘들어요")를 인식해 그 고민과 관련된 제도의 순위를 끌어올립니다.</li>
+            <li>여기에 더해, 복지로 중앙부처 복지서비스 공공데이터(공공데이터포털)를 매주 자동으로 받아와 461개 제도를 추가로 대조합니다. 이 항목들은 요약과 공식 링크만 제공해 정보 오차를 방지합니다.</li>
+            <li>제도 정보는 복지로·정부24·고용24 등 공식 안내를 요약해 담았고, 카드마다 공식 신청처 링크를 달아 바로 확인할 수 있게 했습니다.</li>
+          </ol>
+          <p>결과를 복사해 공유하면 진단 링크가 함께 담기는데, 이 링크에는 선택 답변만 들어가고 <strong>적어주신 고민 내용은 포함되지 않습니다.</strong></p>
+        </div>
+      </details>
+
       <div class="disclaimer">
-        ⚠️ 이 결과는 데모용 참고 정보입니다. 제도별 세부 자격 요건과 예산 소진 여부는
+        ※ 이 결과는 데모용 참고 정보입니다. 제도별 세부 자격 요건과 예산 소진 여부는
         반드시 <strong>공식 신청처</strong>에서 최종 확인해 주세요. 본 서비스는 공공데이터포털,
         복지로, 정부24, 청년정책통합정보포털 등의 공개 정보를 기반으로 제작되었습니다.
       </div>
@@ -169,6 +218,7 @@
 </footer>
 
 <script src="data.js"></script>
+<script src="data-extra.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
