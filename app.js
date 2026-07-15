@@ -99,6 +99,17 @@
 
   syncStatusOptions(); // 첫 로드 시에도 나이 미선택 상태에 맞춰 정리해 둔다
 
+  // 화면에 노출되는 제도 개수는 절대 하드코딩하지 않는다 — data-extra.js가 매주 자동 갱신되므로
+  // 텍스트에 숫자를 직접 박아두면 갱신 후 실제 데이터와 어긋난다. 항상 배열 길이에서 계산한다.
+  (function renderCounts() {
+    const extraCount = typeof EXTRA_PROGRAMS !== "undefined" ? EXTRA_PROGRAMS.length : 0;
+    const curatedCount = PROGRAMS.length;
+    const counts = { curated: curatedCount, extra: extraCount, total: curatedCount + extraCount };
+    document.querySelectorAll("[data-count]").forEach((el) => {
+      el.textContent = counts[el.dataset.count];
+    });
+  })();
+
   function resetToIntro() {
     state.age = state.status = state.housing = state.income = state.child = null;
     state.freeText = "";

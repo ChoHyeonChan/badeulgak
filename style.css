@@ -100,42 +100,23 @@ html.large-text { font-size: 20px; }
   font-family: inherit; cursor: pointer;
   text-align: left;
 }
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.1rem;
-  height: 2.1rem;
-  flex: 0 0 auto;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent) 0%, #0a5c3e 100%);
-  box-shadow: 0 6px 14px -10px rgba(15, 122, 82, 0.7);
+.brand-lockup {
+  display: block;
+  height: 2.4rem;
+  width: auto;
 }
-.brand-mark svg { width: 1.15rem; height: 1.15rem; display: block; }
-.brand-copy {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
-}
-/* '받을각'만으로는 무슨 서비스인지 알 수 없어, 이름 위에 정체를 한 줄로 밝힌다 */
+/* '받을각'만으로는 무슨 서비스인지 알 수 없어, 로고 옆에 정체를 한 줄로 밝힌다 */
 .brand-kicker {
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--ink-3);
-  margin-bottom: 3px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
 }
-.brand-name {
-  display: inline-flex;
-  align-items: baseline;
-  font-size: 1.0625rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.brand-name-accent { color: var(--accent); }
-.brand:hover .brand-name-main { color: var(--accent-strong); }
+.brand:hover .brand-lockup { opacity: 0.86; }
 
 .topbar-right { display: flex; align-items: center; gap: 10px; }
 .topbar-tag {
@@ -326,11 +307,12 @@ html.large-text .btn-fontsize .fontsize-plus { color: #fff; }
   margin-top: 24px;
 }
 .choice-card {
+  position: relative;
   font-family: inherit;
   background: var(--bg);
   border: 1px solid var(--line-strong);
   border-radius: var(--r-ctl);
-  padding: 16px;
+  padding: 16px 40px 16px 16px;
   font-size: 0.9375rem;
   font-weight: 500;
   color: var(--ink);
@@ -339,8 +321,29 @@ html.large-text .btn-fontsize .fontsize-plus { color: #fff; }
   transition: border-color 0.14s, background 0.14s, color 0.14s;
 }
 .choice-card:hover { border-color: var(--accent); background: var(--accent-tint); }
+.choice-card::after {
+  content: "✓";
+  position: absolute;
+  top: 50%; right: 14px;
+  transform: translateY(-50%) scale(0.3);
+  opacity: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  transition: transform 0.24s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.16s ease;
+}
 .choice-card.selected {
   background: var(--accent); border-color: var(--accent); color: #fff;
+  animation: pop-select 0.26s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.choice-card.selected::after { opacity: 1; transform: translateY(-50%) scale(1); }
+
+@keyframes pop-select {
+  0% { transform: scale(1); }
+  45% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .choice-card.selected { animation: none; }
 }
 
 .free-text {
@@ -565,8 +568,7 @@ html.large-text .btn-fontsize .fontsize-plus { color: #fff; }
   margin-top: 56px;
   background: var(--surface);
 }
-/* 문항을 고르는 동안에는 푸터를 감춘다 — 선택지에 집중해야 할 화면이다 */
-body[data-screen="form"] .site-footer,
+/* 로딩 화면은 잠깐 스치듯 지나가는 화면이라 푸터가 깜빡이는 느낌을 주므로 감춘다 */
 body[data-screen="loading"] .site-footer { display: none; }
 
 .footer-inner {
@@ -575,6 +577,7 @@ body[data-screen="loading"] .site-footer { display: none; }
   padding: 32px 20px;
 }
 .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.footer-brand-mark { display: block; width: 1.9rem; height: 1.9rem; }
 .footer-brand strong { display: block; font-size: 0.9375rem; font-weight: 700; color: var(--ink); }
 .footer-brand p { margin: 2px 0 0; font-size: 0.8125rem; color: var(--ink-3); }
 
@@ -609,9 +612,7 @@ body[data-screen="loading"] .site-footer { display: none; }
   .result-card-footer { flex-direction: column; align-items: flex-start; }
   .topbar-tag { display: none; }
   .brand { gap: 8px; }
-  .brand-mark { width: 1.9rem; height: 1.9rem; }
-  .brand-mark svg { width: 1.05rem; height: 1.05rem; }
-  .brand-name { font-size: 1rem; }
+  .brand-lockup { height: 2.1rem; }
 }
 
 /* ===== Print (종이로 전달) ===== */

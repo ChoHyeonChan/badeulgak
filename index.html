@@ -11,8 +11,8 @@
 <meta property="og:description" content="로그인도 개인정보도 없이, 몇 가지 문항과 고민 한 줄로 지금 신청 가능한 지원제도를 30초 만에. 부모님 대신 진단해 드릴 수도 있어요.">
 <meta property="og:image" content="https://chohyeonchan.github.io/badeulgak/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Crect width='24' height='24' rx='6' fill='%230f7a52'/%3E%3Cpath d='M5.5 5.5v13h13' stroke='rgba(255,255,255,0.45)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.5 15L12 11.5l3 3 4.5-4.5' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 10h3.5v3.5' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="icon" type="image/png" href="favicon.png?v=1">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -21,21 +21,8 @@
 <header class="topbar">
   <div class="topbar-inner">
     <button class="brand" id="btn-home" title="처음 화면으로">
-      <!-- 로고: 직각(각)에서 위로 뻗는 화살표 — "받을 각이 나온다" -->
-      <!-- 초록 원 위에 올라가므로 획은 흰색. 초록 획이면 배경과 겹쳐 화살표가 사라진다. -->
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M4 4v16h16" stroke="rgba(255,255,255,0.45)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M7.5 15.5L12 11l3 3 5.5-5.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16.5 8.5h4v4" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <span class="brand-copy">
-        <span class="brand-kicker">지원금 AI</span>
-        <span class="brand-name">
-          <span class="brand-name-main">받을</span><span class="brand-name-accent">각</span>
-        </span>
-      </span>
+      <span class="brand-kicker">지원금 AI</span>
+      <img class="brand-lockup" src="brand-lockup.png" alt="받을각" width="578" height="372">
     </button>
     <div class="topbar-right">
       <button class="btn-fontsize" id="btn-fontsize" aria-pressed="false" title="글씨 크게 보기">가<span class="fontsize-plus">+</span> 큰 글씨</button>
@@ -62,7 +49,7 @@
       </button>
       <p class="privacy-note">로그인·인증서 없이 바로 시작. 입력한 정보는 <strong>브라우저 밖으로 전송되지 않아요.</strong></p>
       <div class="hero-stats">
-        <div class="stat"><strong>481개</strong><span>정밀 큐레이션 20 + 공공데이터 461</span></div>
+        <div class="stat"><strong><span data-count="total">481</span>개</strong><span>정밀 큐레이션 <span data-count="curated">20</span> + 공공데이터 <span data-count="extra">461</span></span></div>
         <div class="stat"><strong>6문항</strong><span>30초면 충분</span></div>
         <div class="stat"><strong>0건</strong><span>개인정보 수집·저장</span></div>
         <div class="stat"><strong>100%</strong><span>공식 출처 기반</span></div>
@@ -220,7 +207,7 @@
       </section>
 
       <details class="browse-all">
-        <summary>수록된 전체 지원제도 20개 한눈에 보기</summary>
+        <summary>수록된 전체 지원제도 <span data-count="curated">20</span>개 한눈에 보기</summary>
         <div class="browse-list" id="browse-list"></div>
       </details>
 
@@ -229,9 +216,9 @@
         <div class="how-it-works">
           <p><strong>입력하신 내용은 서버로 전송되지 않습니다.</strong> 진단은 전부 지금 보고 계신 브라우저 안에서 실행돼요.</p>
           <ol>
-            <li>연령·신분·주거·소득·자녀 유무 다섯 가지 축으로 정밀 검증한 20개 제도의 자격 요건과 대조해 적합도를 점수로 매기고, 자격이 어긋나는 제도는 결과에서 제외합니다. 청년 제도 대부분이 만 34세에서 끊기므로 30대는 34세 기준으로 나눠 판정해요. 혜택 금액까지 표시되는 항목이 이 20개예요.</li>
+            <li>연령·신분·주거·소득·자녀 유무 다섯 가지 축으로 정밀 검증한 <span data-count="curated">20</span>개 제도의 자격 요건과 대조해 적합도를 점수로 매기고, 자격이 어긋나는 제도는 결과에서 제외합니다. 청년 제도 대부분이 만 34세에서 끊기므로 30대는 34세 기준으로 나눠 판정해요. 혜택 금액까지 표시되는 항목이 이 <span data-count="curated">20</span>개예요.</li>
             <li>적어주신 고민 문장에서 일상어 키워드(예: "방세", "취준", "힘들어요")를 인식해 그 고민과 관련된 제도의 순위를 끌어올립니다.</li>
-            <li>여기에 더해, 복지로 중앙부처 복지서비스 공공데이터(공공데이터포털)를 매주 자동으로 받아와 461개 제도를 추가로 대조합니다. 이 항목들은 요약과 공식 링크만 제공해 정보 오차를 방지합니다.</li>
+            <li>여기에 더해, 복지로 중앙부처 복지서비스 공공데이터(공공데이터포털)를 매주 자동으로 받아와 <span data-count="extra">461</span>개 제도를 추가로 대조합니다. 이 항목들은 요약과 공식 링크만 제공해 정보 오차를 방지합니다.</li>
             <li>제도 정보는 복지로·정부24·고용24 등 공식 안내를 요약해 담았고, 카드마다 공식 신청처 링크를 달아 바로 확인할 수 있게 했습니다.</li>
           </ol>
           <p>결과를 복사해 공유하면 진단 링크가 함께 담기는데, 이 링크에는 선택 답변만 들어가고 <strong>적어주신 고민 내용은 포함되지 않습니다.</strong></p>
@@ -251,13 +238,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M4 4v16h16" stroke="rgba(255,255,255,0.45)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M7.5 15.5L12 11l3 3 5.5-5.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16.5 8.5h4v4" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
+      <img class="footer-brand-mark" src="favicon.png" alt="" aria-hidden="true" width="64" height="64">
       <div>
         <strong>받을각</strong>
         <p>몰라서 못 받는 돈을, 아는 돈으로.</p>
@@ -277,7 +258,7 @@
       <div class="footer-col">
         <h4>데이터 갱신</h4>
         <p class="footer-note">
-          복지로 중앙부처 복지서비스 <strong>461개</strong>를
+          복지로 중앙부처 복지서비스 <strong><span data-count="extra">461</span>개</strong>를
           매주 월요일 자동으로 다시 받아옵니다.
         </p>
       </div>
