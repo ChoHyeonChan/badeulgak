@@ -566,8 +566,7 @@ body[data-screen="loading"] .site-footer { display: none; }
   margin: 0 auto;
   padding: 32px 20px;
 }
-.footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
-.footer-brand-mark { display: block; width: 1.9rem; height: 1.9rem; }
+.footer-brand { margin-bottom: 24px; }
 .footer-brand strong { display: block; font-size: 0.9375rem; font-weight: 700; color: var(--ink); }
 .footer-brand p { margin: 2px 0 0; font-size: 0.8125rem; color: var(--ink-3); }
 
