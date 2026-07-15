@@ -11,8 +11,8 @@
 <meta property="og:description" content="로그인도 개인정보도 없이, 몇 가지 문항과 고민 한 줄로 지금 신청 가능한 지원제도를 30초 만에. 부모님 대신 진단해 드릴 수도 있어요.">
 <meta property="og:image" content="https://chohyeonchan.github.io/badeulgak/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Crect width='24' height='24' rx='5' fill='%23ffffff'/%3E%3Cpath d='M4 4v16h16' stroke='%23c9d3cd' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.5 15.5L12 11l3 3 5.5-5.5' stroke='%230f7a52' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 8.5h4v4' stroke='%230f7a52' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Crect width='24' height='24' rx='6' fill='%230f7a52'/%3E%3Cpath d='M5.5 5.5v13h13' stroke='rgba(255,255,255,0.45)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.5 15L12 11.5l3 3 4.5-4.5' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 10h3.5v3.5' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -22,14 +22,20 @@
   <div class="topbar-inner">
     <button class="brand" id="btn-home" title="처음 화면으로">
       <!-- 로고: 직각(각)에서 위로 뻗는 화살표 — "받을 각이 나온다" -->
+      <!-- 초록 원 위에 올라가므로 획은 흰색. 초록 획이면 배경과 겹쳐 화살표가 사라진다. -->
       <span class="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none">
-          <path d="M4 4v16h16" stroke="#c9d3cd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M7.5 15.5L12 11l3 3 5.5-5.5" stroke="#0f7a52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16.5 8.5h4v4" stroke="#0f7a52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 4v16h16" stroke="rgba(255,255,255,0.45)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7.5 15.5L12 11l3 3 5.5-5.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.5 8.5h4v4" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </span>
-      <span class="brand-name">받을각</span>
+      <span class="brand-copy">
+        <span class="brand-kicker">지원금 AI</span>
+        <span class="brand-name">
+          <span class="brand-name-main">받을</span><span class="brand-name-accent">각</span>
+        </span>
+      </span>
     </button>
     <div class="topbar-right">
       <button class="btn-fontsize" id="btn-fontsize" aria-pressed="false" title="글씨 크게 보기">가<span class="fontsize-plus">+</span> 큰 글씨</button>
@@ -247,9 +253,9 @@
     <div class="footer-brand">
       <span class="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none">
-          <path d="M4 4v16h16" stroke="#c9d3cd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M7.5 15.5L12 11l3 3 5.5-5.5" stroke="#0f7a52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16.5 8.5h4v4" stroke="#0f7a52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 4v16h16" stroke="rgba(255,255,255,0.45)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7.5 15.5L12 11l3 3 5.5-5.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.5 8.5h4v4" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </span>
       <div>
