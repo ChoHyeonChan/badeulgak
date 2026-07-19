@@ -1,7 +1,62 @@
 // 자동 생성 파일 — 직접 수정 금지 (scripts/fetch-data.mjs가 갱신)
 // 출처: 복지로 중앙부처복지서비스 (한국사회보장정보원, data.go.kr) — 원문 인용
-// 갱신: 2026-07-14 / 목록 461건, 상세 20건
+// 갱신: 2026-07-19 / 목록 461건, 상세 100건
 const EXTRA_PROGRAMS = [
+ {
+  "id": "WLF00006248",
+  "name": "직장인 든든한 점심밥",
+  "summary": "직장인 점심값 부담 완화 및 지역 외식 경제 활성화를 위해 중소기업 재직 근로자 대상 점심 외식비용의 일부를 지원합니다.",
+  "agency": "농림축산식품부",
+  "life": "청년,중장년,노년",
+  "target": "",
+  "theme": "신체건강",
+  "apply": "N",
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006248&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "「중소기업기본법」 상 중소기업이며, 근로자에게 점심 식대를 지급하는 기업에 재직 중인 근로자를 대상으로 지원합니다.&#13;",
+  "content": "점심시간에 외식업체에서 결제한 금액의 20% 할인 지원합니다.&#13;공휴일을 제외한 주중(월~금) 11시~15시에 결제한 금액에 대해 적용&#13;1인당 월 최대 할인 한도는 4만원&#13;지원방법은 기업 여건에 따라 선택한 디지털식권 또는 카드로 주중 점심시간에 외식업체에서 결제시 자동으로 할인 지원됩니다.&#13;사용처는 외식 경제 활성화 및 소상공인과 상생을 위하여 식품위생법 상 일반음식점, 휴게음식점 등 외식업체에서 사용 가능합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
+ },
+ {
+  "id": "WLF00006318",
+  "name": "경계선지능청년지원 사업",
+  "summary": "경계선 지능인 청년의 특성·욕구를 고려한 맞춤형 취업 프로그램 제공하여 직업역량 강화 및 노동을 통한 자립을 지원합니다.",
+  "agency": "고용노동부",
+  "life": "청년",
+  "target": "",
+  "theme": "서민금융",
+  "apply": "N",
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006318&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "경계선 지능(IQ 71~84) 청년(18~39세)을 지원합니다.",
+  "content": "경계선 지능 청년을 위한 각종 상담 경계선 지능 청년을 위한 기초 소양 및 구직 기술 습득 프로그램 운영 (취업희망 시) 국민취업지원제도, 청년 일경험 지원사업 등 연계"
+ },
+ {
+  "id": "WLF00005631",
+  "name": "아가와 엄마를 위한 무료 공익보험(우체국대한민국 엄마보험)",
+  "summary": "자녀의 희귀질환과 엄마의 임신질환을 보장하는 공익보험으로 별도의 조건없이 국가(우체국)에서 보험료 전액을 지원합니다.",
+  "agency": "과학기술정보통신부",
+  "life": "영유아,아동,임신 · 출산",
+  "target": "",
+  "theme": "임신·출산,보육",
+  "apply": "N",
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005631&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "가입나이 : (주계약) 태아, (특약) 17~45세(22주 이내 임신부)&#13;다태아의 경우 각각 가입하되 특약은 다태아 중 1명만 가입 가능&#13;엄마(특약)를 제외한 자녀만 가입할 경우에는 22주 이후에도 가입 가능(출산 전까지)&#13;보험기간 : (주계약) 자녀-10년 만기, (특약) 엄마-분만시까지(최대 10개월)&#13;자세한 내용은 우체국보험 홈페이지와 모바일앱(잇다 보험) 참고&#13;",
+  "content": "보장내용&#13;(주계약) 태아의 희귀질환 진단보험금 100만원(최초 1회에 한함)&#13;(특약) 임신중 질환별(임신중독증 10만원, 임신고혈압 5만원, 임신성당뇨병 3만원) 진단보험금(최초 1회에 한함) ※ '희귀질환'이라 함은 희귀질환관리법 및 관련 법령 등에 따라 질병관리청장이 공고한 질환을 말합니다.&#13;보험료 : 우체국에서 전액 부담&#13;납입기간 : 전기납(연납) 국가(우체국)에서 부담&#13;",
+  "criteria": "지원대상의 내용을 참고해주시 바랍니다. &#13;"
+ },
+ {
+  "id": "WLF00001136",
+  "name": "보험급여(건강보험 장애인보조기기)",
+  "summary": "건강보험가입자 및 피부양자 중 「장애인복지법」에 따라 등록한 장애인이 장애인보조기기를 구입할 경우 구입금액 일부를 지원합니다.",
+  "agency": "보건복지부",
+  "life": "",
+  "target": "장애인",
+  "theme": "신체건강",
+  "apply": "N",
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001136&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "건강보험가입자 및 피부양자 중 「장애인복지법」에 따라 등록한 장애인이 장애인보조기기를 구입할 경우 지원합니다.&#13;",
+  "content": "적용대상 품목의 기준액 범위내에서 구입비용의 90%를 국민건강보험공단에서 부담합니다.※ 나머지 초과분은 본인부담&#13;장애인보청기, 전동보조기기(전동휠체어, 의료용 스쿠터, 이동식전동리프트), 자세보조용구는 고시금액, 구입금액, 기준금액 중 낮은 금액의 90%를 지원합니다.&#13;",
+  "criteria": "보조기기 구입 전, 국민건강보험공단에서는 아래의 사항을 확인합니다.&#13;보조기기 세부기준 및 보험급여 기준에 부합하는지 여부&#13;처방 전문의 자격에 부합하는지 여부&#13;중복지급 등 급여제한 대상에 해당하는지 여부&#13;직전 지급 보조기기의 내구연한 경과여부&#13;내구연한이 경과하지 않은 경우 급여 사유&#13;기타 적정한 급여를 위하여 필요한 사항&#13;보조기기 구입비용 지급청구 시, 국민건강보험공단에서는 아래의 사항을 확인하여 공단부담금을 지급합니다.&#13;장애인이 보조기기를 구입했는지 여부&#13;검수확인 전문…"
+ },
  {
   "id": "WLF00001155",
   "name": "노인일자리 및 사회활동 지원사업",
@@ -250,19 +305,6 @@ const EXTRA_PROGRAMS = [
   "content": "1인당 최대 1백만원 한도 내 지원합니다."
  },
  {
-  "id": "WLF00006318",
-  "name": "경계선지능 청년 지원 사업",
-  "summary": "경계선 지능인 청년의 특성·욕구를 고려한 맞춤형 취업 프로그램 제공하여 직업역량 강화 및 노동을 통한 자립을 지원합니다.",
-  "agency": "고용노동부",
-  "life": "청년",
-  "target": "",
-  "theme": "서민금융",
-  "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006318&amp;wlfareInfoReldBztpCd=01",
-  "target_detail": "경계선 지능(IQ 71~84) 청년(18~39세)을 지원합니다.",
-  "content": "경계선 지능 청년을 위한 각종 상담 경계선 지능 청년을 위한 기초 소양 및 구직 기술 습득 프로그램 운영 (취업희망 시) 국민취업지원제도, 청년 일경험 지원사업 등 연계"
- },
- {
   "id": "WLF00006317",
   "name": "발달장애인 자기주도 재직자 훈련",
   "summary": "발달장애 근로자에게 직업생활 유지를 위한 직무능력 향상 및 기초 소양 훈련 프로그램을 제공합니다.",
@@ -271,7 +313,10 @@ const EXTRA_PROGRAMS = [
   "target": "장애인",
   "theme": "일자리,교육",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006317&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006317&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "발달장애 근로자를 대상으로 지원합니다.&#13;",
+  "content": "(운영방법) 참여 희망하는 발달장애 근로자가 훈련기관에 신청&#13;훈련생 발굴: 훈련기관이 표준사업장 등 발달장애 다수고용 사업장에 프로그램 안내&#13;훈련장소: 발달훈련센터, 통학 편리한 사업장 인근 외부시설 임차, 사업장 교육장 등&#13;(과정운영)&#13;&amp;#9312; (소양과정 단독형) 직종에 상관없이 센터별 일정기간 직장 내 예절, 체력 증진, 대인 관계 등 소양과목 위주- 훈련지원프로그램 건강관리, 신체능력향상, 인지능력향상, 정신건강관리, 모의작업, 대인관계향상 프로그램 구성 모듈 활용 가능&#13;&amp…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006316",
@@ -282,7 +327,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "교육,서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006316&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006316&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "고등교육법 제2조 제4호에 해당하는 전문대학, 사업 참여대학 재학생 중 취업 역량 개발 노력과 성취가 우수한 학생을 대상으로 지원합니다.&#13;",
+  "content": "지원금액&#13;Ⅰ유형: 등록금(수업료) 및 생활비 학기당 250만 원 지원(400명 내외)&#13;Ⅱ유형: 등록금(수업료) 지원(740명 내외) ※ 등록금 일부를 지원받는 국가유공자, 보훈대상자, 탈북대학생 등의 경우 학생부담분만 지원&#13;지원기간&#13;(지원기간) 연 단위로 선발하여 지원(연1회 선발을 통해 당해연도 1년(1~2개 학기) 지원)&#13;(지원한도) 소속 대학의 학제 및 정규학기를 기준으로 학생별 최대 지원 가능 횟수 범위 내에서 지원 가능&#13;",
+  "criteria": "직전 학기 12학점 이상 이수하고, 직전 학기까지 총평균성적이 백분위 점수 80점이상인 자(1학년은 취업역량 개발 계획, 학업성적 등으로 평가)&#13;"
  },
  {
   "id": "WLF00006311",
@@ -293,7 +341,10 @@ const EXTRA_PROGRAMS = [
   "target": "다문화·탈북민,장애인",
   "theme": "교육,법률",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006311&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006311&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "다문화가족, 북한이탈주민, 장애인, 농업인, 청소년 등을 대상으로 지원합니다.&#13;",
+  "content": "다문화가족, 북한이탈주민, 장애인, 농업인, 청소년 등에 맞춤형, 체험형 법교육 프로그램 진행&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00000814",
@@ -304,7 +355,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "주거,에너지",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000814&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000814&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "15년 이상 경과된 공공임대주택(영구 및 50년임대) 입주자를 지원합니다.&#13;",
+  "content": "지자체 보조 및 LH 출자 방식으로 오래된 공공임대 주택의 세대 내부 및 부대·복리시설 개선을 지원합니다.&#13;발코니 샷시, 외부창호, 저층 승강기 공사 등 세부사업별로 소요사업비를 산출하여 시설 개선을 지원합니다.&#13;",
+  "criteria": "노후 공공임대주택 28만호, 349개단지(영구:183단지, 50년:166단지)를 대상으로 합니다.&#13;안전 및 에너지절약 등을 위한 사업항목 중 대상단지의 시설관리주체{지자체(시도) 및 LH}에서 매년초에 수요조사를 실시하고, 예산확보 등을 종합적으로 검토하여 당해년도 사업항목을 선정합니다.&#13;"
  },
  {
   "id": "WLF00003269",
@@ -315,7 +369,10 @@ const EXTRA_PROGRAMS = [
   "target": "다자녀,장애인,저소득,한부모·조손",
   "theme": "주거",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003269&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003269&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "[일반 전세임대주택] 무주택세대구성원으로서 사업대상지역에 거주하는 사람&#13;- (1순위) 생계·의료급여수급자, 보호대상 한부모가족, 전년도 도시근로자 가구당 월평균 소득의 70% 이하인 장애인 등&#13;- (2순위) 전년도 도시근로자 가구당 월평균소득의 50% 이하인 가구, 전년도 도시근로자 가구당 월평균 소득 이하인 장애인&#13;[청년 전세임대주택] 무주택자인 대학생, 취업준비생, 19세~39세 청년(단, 혼인 중인 자는 제외)&#13;- (1순위) 생계·의료·주거급여 수급자 가정의 청년, 보호대상 한부모 가족의 청년, 자…",
+  "content": "무주택·저소득 입주대상자가 거주를 희망하는 기존주택을 선정하고 공공주택사업자가 기존주택 소유자와 전세계약을 체결 후 입주대상자에게 저렴하게 재임대합니다.&#13;",
+  "criteria": "무주택요건 및 소득, 자산 기준을 충족하여야 하며, 세부기준은 다음과 같습니다.&#13;무주택세대구성원(「주택공급에 관한 규칙」 제2조)&#13;- 세대별 주민등록표 세대주, 세대원(세대주의 배우자, 직계존비속) 및 다음의 사람 전원이 주택을 소유하고 있지 아니한 세대의 세대주 및 세대원&#13;· 주택공급을 신청하려는 세대주 또는 세대원의 배우자이면서 해당 세대주 또는 세대원과 세대별 주민등록표상에 함께 등재되어 있지 아니한 사람&#13;· 주택공급을 신청하려는 세대주 또는 세대원의 직계존비속으로서 가목의 배우자와 동일한 세대를…"
  },
  {
   "id": "WLF00006314",
@@ -326,7 +383,10 @@ const EXTRA_PROGRAMS = [
   "target": "다문화·탈북민",
   "theme": "교육,법률",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006314&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006314&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "외국인등록증 또는 거소신고증을 소지한 합법 체류 외국인 및 귀화자, 국적판정, 국적회복에 의한 국적취득일로부터 3년이 경과하지 않은 자를 대상으로 지원합니다.&#13;",
+  "content": "정규 교육 과정&#13;한국어와 한국문화(0단계 &amp;sim; 4단계) : 면제 ~ 최대 415시간&#13;한국어 수준에 따라 기초(0단계), 초급(1, 2단계), 중급(3, 4단계) 단계별로 교육&#13;한국사회이해(5단계) : 70시간 ~ 100시간&#13;사회, 문화, 정치, 경제, 역사, 법 지리 영역에 걸쳐 한국 생활에 필요한 기본소양을 영주용 기본과정과 귀화용 심화과정으로 나누어 교육&#13;정규 교육과정 외&#13;시민교육 : 생활법률, 범죄예방, 소비자교육, 금융경제, 소방안전, 교통안전, 마약예방, 산업안전보건,…",
+  "criteria": "&#13; &#13; &#13; &#13;지원대상의 내용을 참고해주시기 바랍니다. &#13; &#13;"
  },
  {
   "id": "WLF00006313",
@@ -337,7 +397,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "임신·출산,보육",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006313&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006313&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "임신·출산(유산·사산 포함)이 확인된 건강보험 가입자 또는 피부양자&#13;2세 미만인 가입자 또는 피부양자의 법정대리인(출산한 가입자 또는 피부양자가 사망한 경우)* 제외 대상 : (의료급여법)에 따라 의료급여를 받는 자(수급권자), 건강보험 적용배제 신청자, 건강보험 자격상실자, 급여정지자&#13;",
+  "content": "지원내용&#13;임신 1회당 100만원(다태아 임신부의 경우 140만원 기본지급)&#13;* 분만취약지의 경우 20만원 추가지원* 다태아 임산부의 경우 태아당 100만원이 되도록 추가지원&#13;사용기간&#13;사용 시작일: 이용권 발급일(포인트 생성일)원 기본지급)&#13;사용 종료일: 분만예정일(출산일, 유산일, 사산일)로부터 2년* 사용 기간 내 사용하지 못한 임신·출산 진료비 지원금 잔액은 자동 소멸&#13;지원범위&#13;임산부의 진료비 및 약제·치료재료 구입에 대한 본인부담금(급여·비급여)&#13;2세 미만 영유아의 진료…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006312",
@@ -348,7 +411,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006312&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006312&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "「성매매방지 및 피해자보호 등에 관한 법률」 제2조 제4호에 의거 성매매피해자 등에게 자활을 위한 서비스를 지원합니다.&#13;가. 위계, 위력, 그 밖에 이에 준하는 방법으로 성매매를 강요당한 사람&#13;나. 업무관계, 고용관계, 그 밖의 관계로 인하여 보호 또는 감독하는 사람에 의하여 「마약류관리에 관한 법률」 제2조에 따른 마약ㆍ향정신성의약품 또는 대마(이하 &amp;ldquo;마약등&amp;rdquo;이라 한다)에 중독되어 성매매를 한 사람&#13;다. 미성년자, 사물을 변별하거나 의사를 결정할 능력이 없거나 미약한 사람…",
+  "content": "전문상담 : 개별/집단 상담, 기타 서비스 연계 등 맞춤형 상담 제공&#13;자립/자활지원 : 성매매피해자에 대한 각종 질병 치료비, 선불금 등 법률 문제 해결을 위한 비용 지원, 직업 훈련 및 진학/기술교육 지원, 피료/회복프로그램 운영 등&#13;구조 및 보호 : 성매매 피해자 지원 시설(쉼터) 및 그룹홈 운영, 성매매집결지 현장 상담소 및 열린터 운영 등&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00001084",
@@ -359,7 +425,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "신체건강,정신건강,안전·위기,법률",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001084&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001084&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "가정폭력, 성폭력, 스토킹, 교제폭력, 디지털성범죄 등 폭력 피해자를 지원합니다.&#13;",
+  "content": "가정폭력, 성폭력, 스토킹, 교제폭력, 디지털성범 등 폭력 피해자에 대한 1차 긴급상담, 피해자 임시보호, 서비스연계(의료기관, 상담기관, 법률구조기관, 보호시설 등) 등 위기개입 서비스를 제공합니다. &#13;여성폭력 피해자에 대한 신고접수 및 긴급상담·구조&#13;긴급보호 조치 : 긴급상황에 처한 피해자에 대한 위기개입 및 긴급한 구조를 위해 112, 119 등 연계조치, 관련 상담·의료·법률구조기관 또는 보호시설 등에 대한 정보제공 및 연계조치&#13;긴급피난처 운영 : 가정폭력 등 피해자 및 동반자녀에 대한 임시보호 및 숙식…",
+  "criteria": "지원대상의 내용을 참고해 주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006310",
@@ -370,7 +439,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득",
   "theme": "서민금융,법률",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006310&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006310&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "감당할 수 없는 빚으로 개인회생, 개인파산 및 면책 제도 이용을 원하는 국민을 대상으로 지원합니다.&#13;대한법률구조공단 상담 결과 개인 회생이나 개인 파산 이용이 적정한 채무자(지원가능여부 및 상세 지원 기준은 공단 확인 필요)&#13;",
+  "content": "&#13; &#13; &#13; &#13;개인 회생 및 개인 파산 사건에 대한 법률 상담 및 소송 대리 등의 법률 구조를 지원합니다. - 변호사에 의한 개인 회생 및 개인 파산 사건 신청 대리, 변호사 보수 및 인지대, 송달료 무료 지원 &#13;면책대상자에 대한 설명회, 국민연금공단 재무설계 및 취업 지원 안내 &#13; &#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006308",
@@ -381,7 +453,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득",
   "theme": "법률",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006308&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006308&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "법률 상담이 필요한 국민을 대상으로 지원합니다.&#13;",
+  "content": "법률 관련 간담 상단, 손해배상, 계약 등 민사소송, 임대자, 개인회생 및 파산 등 무료법률상담을 지원합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006307",
@@ -392,7 +467,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "보호·돌봄",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006307&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006307&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "아봉복지시설*, 가정위탁 보호종료 5년이내 자립준비청년 * 아동복지시설 : 아동복지법 제52조 상 아동양육시설, 공동생활가정, 아동일시보호시설, 학대피해아동쉼터, 아동보호치료시설",
+  "content": "- 사후관리 : 대상자의 자립생활 확인, 사후관리 상담 후 필요시 자립지원통합서비스 연계- 자립지원 통합서비스 : 생활, 주거, 교육, 취업, 의료 등 자립에 필요한 서비스 지원 및 복지급여, 서비스 연계",
+  "criteria": "아동복지시설*, 가정위탁 보호종료 5년이내 자립준비청년 * 아동복지시설 : 아동복지법 제52조 상 아동양육시설, 공동생활가정, 아동일시보호시설, 학대피해아동쉼터, 아동보호치료시설** 단, 소년법 제32조제1항제6호에 따른 보호처분으로 아동복지시설에서 보호종료된 경우에는 아동복지법 제 15조제1항제3호, 제5호에 따른 보호조치 이력이 있는 자에 한정 - 18세 또는 보호연장 후 종료된 경우 보호종료일로부터 5년간 지원 * '23년부터 보호연장아동도 자립지원 통합서비스 지원대상자에 포함 가능 - 15세 이후 조기보호종료된 경우 18세가…"
  },
  {
   "id": "WLF00006306",
@@ -403,7 +481,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "일자리,교육",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006306&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006306&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "&#13; &#13; &#13; &#13;직업계고 재학생을 대상으로 지원합니다. &#13; &#13;",
+  "content": "맞춤형 취업지원, 현장실습지원, 고졸 취업 전문 구인 구직 플랫폼 을 통한 채용정보 제공 등을 지원합니다.&#13;",
+  "criteria": "&#13; &#13; &#13; &#13;지원대상의 내용을 참고해주시기 바랍니다. &#13; &#13;"
  },
  {
   "id": "WLF00006305",
@@ -414,7 +495,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "일자리,교육",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006305&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006305&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "&#13; &#13; &#13; &#13;진로미결정 직업계고 졸업생을 대상으로 지원합니다. &#13; &#13;",
+  "content": "미취업 직업계고 졸업생 진로상담 및 취업 지원(일자리 취업정보 제공, 교육훈련, 취업컨설팅 등)&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006304",
@@ -425,7 +509,10 @@ const EXTRA_PROGRAMS = [
   "target": "보훈대상자",
   "theme": "생활지원,주거,교육,보호·돌봄",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006304&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006304&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "부양의무자가 없는, 미성년 자녀(손자녀) 또는 미성년 제매&#13;양육지원을 받고 있는 자로서 19세가 된 자가 고등학교․대학 또는 이에 준하는 학교에 재학 중이거나 19세가 되는 해에 고등학교․대학 또는 이에 준하는 학교에 입학하는 경우에는 학교 졸업 시 까지 지원&#13;부양의무자 관련은 양로지원과 동일&#13;부양의무자가 양로지원을 받는 경우, 부양의무자가 없는 것으로 인정&#13;",
+  "content": "양육지원대상자가 성인이 될 떄까지 의식주 제공 등 지원 * 양육지원을 받고 있는 자로서 19세가 된 자가 고등학교․대학 또는 이에 준하는 학교에 재학 중이거나 19세가 되는 해에 고등학교․대학 또는 이에 준하는 학교에 입학하는 경우에는 학교 졸업 시 까지 지원&#13;",
+  "criteria": "부양의무자가 없어야 함* 단, 부양의무자가 양로지원을 받는 경우 및 다음 각호에 해당하는 경우에는 부양의무자가 없는 것으로 인정&#13;&amp;#9312; 부양의무자가 「국가유공자법 시행령」별표 2의 장애인장애구분표에 해당하는 심신장애가 있는 경우&#13;&amp;#9313; 부양의무자가 현역병 등으로 의무복무 기간 중에 있거나, 1년 이상 행방불명인 경우&#13;&amp;#9314; 부양의무자가 「국민기초생활 보장법」제7조 제1항 제1호~제4호에 따른 생계급여·주거급여·의료급여·교육급여 수급자 또는 같은 법 제2조제10호에 따른…"
  },
  {
   "id": "WLF00006212",
@@ -436,7 +523,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "신체건강,서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006212&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006212&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "환경오혐피해 구제란?&#13;원인자가 존재하지않거나 배상능력이 없어 환경오염피해의 전부 또는 일부를 배상받지 못하는 피해자에 대해 구제급여 적합여부 등을 검토하여 구제급여를 지급하는 제도입니다. * 단, 해당사업자가 받은 피해와 해당 사업자의 종업원이 업무상 받은 피해는 제외&#13;환경오염피해 구제급여 신청 대상은?&#13;환경오염 피해로 인한 생명, 신체 및 재산에 피해가 발생되었다고 의심되는 대상자 입니다.&#13;",
+  "content": "환경오염피해 구제급여는 의료비, 요양생활수당, 장의비, 유족보상비, 재산피해보상비 이상 5개로 구성됩니다.(환경오염피해구제법 시행령 제13조부터 제18조까지)&#13;&amp;#9312; (의료비) ｢국민건강보험법｣에서 정한 요양기관에서 환경오염피해로 인한 상해나 질병의 치료를 받은 피해자가 부담한 금액에 대해 지급하는 비용&#13;&amp;#9313; (요양생활수당) 의료비 외에 환경오염피해로 인한 치료ㆍ요양 및 생활에 필요한 비용&#13;&amp;#9314; (장의비) 환경오염피해로 인해 피해자가 사망한 경우 그 장제를 지낸 유…",
+  "criteria": "환경오염피해 인과관계 판단기준을 충족하는 피해자에 대하여 중앙환경분쟁조정피해구제위원회에서 심의·결정합니다.&#13;환경오염피해 배상책임 및 구제에 관한 법률 제23조 및 제25조에 따라, 아래의 경우에 환경분쟁조정피해구제위원회의 심의ㆍ결정되며, 피해자 또는 그 유족에게 구제급여를 지급할 수 있습니다&#13;환경오염피해의 원인을 제공한 자를 알 수 없거나 그 존재 여부가 분명하지 아니하거나 무자력인 경우&#13;사업자의 환경오염피해에 대한 배상책임한도를 초과한 경우로 인해 피해자가 환경오염피해의 전부 또는 일부를 배상받지 못 하는 경…"
  },
  {
   "id": "WLF00006301",
@@ -447,7 +537,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006301&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006301&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "가족돌봄청(소)년(13세~34세)으로, 가족돌봄청년 세부선정 기준은 아래와 같습니다.&#13; &#13;&amp;#9312;돌봄대상가족이 있을 것(고령,장애,질병,중증수술 등)&#13;&amp;#9313;돌봄대상가족과 도움필요 아동ㆍ청년 외 35세 이상 다른 가족 구성원이 없을 것 (35세 이상 가족 구성원이 거주불명, 국외체류, 장애 등으로 실질적으로 돌봄을 수행할 수 없는 상황에 있는 경우 예외)&#13;&amp;#9314;돌봄대상가족과 도움필요 아동ㆍ청년의 「주민등록법」상 주소지가 일치할 것(주소지가 다르더라도 실질적 돌봄을…",
+  "content": "자기계발, 건강관리 및 신체적/정신적 회복 등 지원대상자의 미래준비에 필요한 비용을 결제할 수 있도록 자기돌봄비 200만원 1회 지급&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006299",
@@ -458,7 +551,10 @@ const EXTRA_PROGRAMS = [
   "target": "장애인",
   "theme": "신체건강,정신건강",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006299&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006299&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "'장애인' 및 '손상'이나 질병발생 후 완전한 회복이 어려워 일정기간 내 장애인이 될 것으로 예상되는 자(이하 '예비장애인'이라고 함)&#13;",
+  "content": "장애인 건강보건관리사업, 여성장애인 모성보건사업, 보건의료 인력 및 장애인/가족 교육 등 유관기관 및 서비스 연계 조정 지원 등&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006303",
@@ -469,7 +565,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득",
   "theme": "신체건강,서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006303&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006303&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "치매환자, 경도인지장애진단자 등 재산관리 위험이 있거나 위험이 예상되는 자로 기초연금수급권자를 대상으로 지원합니다.&#13;",
+  "content": "치매안심재산관리서비스 계약서에 기재된 시점부터 위탁재산 배분을 시작하며, 배분금액 및 주기 등은 계약전 작성한 개인별 재정지원계획서에 따릅니다.&#13;배분금 종류는 &amp;lsquo;통상지출&amp;rsquo;과 &amp;lsquo;특별지출&amp;rsquo;로 구분&#13;➊ (통상지출) 개인별 재정지원계획서에 반영되어 있는 지출 항목으로, 개인별 재정지원계획서에 기재된대로 처리&#13;➋ (특별지출) 개인별 재정지원계획 수립 시 예측하지 못했던 지출항목으로 의료비, 간병비 등이 있을 수 있음 - (배분방법) 수익자의 신청(증…",
+  "criteria": "시범사업 대상자는 치매환자, 경도인지장애 진단자 등 재산관리 위험이 있거나 위험이 예상되는 자로 기초연금 수급권자(65세 이상)으로,&#13;치매, 경도인지장애 진단자가 아니어도 경제적 학대 판정 또는 의심되는 경우 포함&#13;기초연금 수급권자 아니라도 65세 미만 조기 발병 치매환자 중 기초생활수급자‧차상위계층 등 저소득층은 대상에 포함&#13;서비스 이용자는 이용료 부담이 원칙이나 시범사업 기간에 한해 면제하고,기초연금수급권자가 아닌 자가 서비스를 희망하는 경우 비용 부담(연0.5%)** 조기발병(65세 이하) 치매이면서 저소…"
  },
  {
   "id": "WLF00006302",
@@ -480,7 +579,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006302&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006302&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "성매매 피해 지원시설을 퇴소한 자로서, 아래의 나이 및 입소 기간 등 요건을 모두 충족하는 경우 ※ &amp;lsquo;26년 지원시설 퇴소자부터 적용.지원&#13;(나이) 성착취 피해자로서 지원시설 입소 당시 19세 미만이며, 퇴소 시 나이가 19세 이상인 자&#13;(입소 기간) 퇴소일 기준, 과거 지원시설 입소 후 1년 이상 연속하여 보호를 받은 자※ 다음 어느 하나에 해당하는 경우 지원 제외: &amp;#9312;「성매매피해자보호법 시행규칙」 제9조제4항제3호 내지 제5호에 따라 시설 퇴소 조치된 경우, &amp;#9313;…",
+  "content": "월 50만원 현금 지급, 최장 12개월 지원하며, 본인 명의 계좌로 지급이 원칙&#13;",
+  "criteria": "&#13; &#13; &#13; &#13;지원대상의 내용을 참고해주시기 바랍니다. &#13; &#13;"
  },
  {
   "id": "WLF00003191",
@@ -491,7 +593,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득",
   "theme": "생활지원,안전·위기,보호·돌봄",
   "apply": "Y",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003191&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003191&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "돌봄서비스가 필요한 65세 이상 &amp;#9312;국민기초생활 수급자, &amp;#9313;차상위 계층 또는 &amp;#9314;기초연금수급자로서 유사 중복사업 자격에 해당되지 않는 자를 대상으로 합니다. ※ 다만, 시장·군수·구청장이 서비스가 필요하다고 인정하는 경우 예외적으로 제공 가능&#13;유사중복사업 자격 해당자는 다음과 같습니다. ※ 노인맞춤돌봄서비스는 예방적 돌봄서비스로, &amp;#9312;~&amp;#9316;까지의 유사중복사업을 노인맞춤돌봄서비스 보다 우선적으로 제공&#13;&amp;#9312; 노인장기요양보험…",
+  "content": "방문형, 통원형(집단 프로그램) 등의 직접 서비스(안전지원, 사회참여, 생활교육, 일상생활지원) 및 연계 서비스(민간후원 자원), 특화서비스, 사후관리서비스를 제공합니다.&#13;개인별 돌봄욕구, 필요정도에 따라 서비스 내용, 제공시간, 제공주기 등을 결정합니다.&#13;",
+  "criteria": "대상자 선정 조사지를 통해 사회-신체-정신영역의 돌봄필요도에 따른 대상자 군을 결정합니다.&#13;(중점돌봄군) 신체적인 기능제한으로 일상생활지원 필요가 큰 대상- 대상자 선정조사 결과, &amp;lsquo;신체&amp;rsquo;영역이 &amp;lsquo;상&amp;rsquo;이면서 &amp;lsquo;사회&amp;rsquo;영역 또는 &amp;lsquo;정신&amp;rsquo;영역에서 &amp;lsquo;중&amp;rsquo; 또는 &amp;lsquo;상&amp;rsquo;이 1개 이상으로 판정된 대상자&#13;(일반돌봄군) 사…"
  },
  {
   "id": "WLF00006300",
@@ -502,7 +607,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006300&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006300&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "재태기간(임신기간) 37주 미만의 조산아 또는 출생체중 2,500g 이하의 저체중 출생아(건강보험 가입자, 피부양자)&#13;",
+  "content": "지원기간: 재태기간에 따라 출생일로부터 5년에서 최대 5년 4개월까지 * 건강보험공단에 경감 신청(등록)한 날부터 경감 적용&#13;지원 범위: 외래진료시 요양급여비용 총액의 5% 본인부담률 적용&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006297",
@@ -513,7 +621,10 @@ const EXTRA_PROGRAMS = [
   "target": "보훈대상자,장애인",
   "theme": "일자리",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006297&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006297&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "장애인 예비창업자 또는 창업 7년 미만 장애인기업&#13;",
+  "content": "창업 공간(사무공간, IT인프프라 등) 제공&#13;정책정보 제공 등 경영활동 지원을 통한 창업기업 성장기반 조성&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00003201",
@@ -524,7 +635,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득",
   "theme": "주거,에너지",
   "apply": "Y",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003201&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003201&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "근로능력여부, 성별, 연령 등에 관계없이 국가의 보장을 필요로 하는 대상으로 소득인정액(소득평가액+재산의 소득환산액)이 기준중위소득의 48% 이하인 가구를 대상으로 지원합니다.* (원칙) 가구단위 보장, 필요한 경우 개인단위 보장&#13;",
+  "content": "임차가구는 전월세비용을 지원하고, 자가가구는 낡은 집을 고쳐드립니다.&#13;(임차가구) 지역 및 가족 수에 따라 산정한 기준임대료를 상한으로 실제 임차료(월 임차료+보증금 환산액)을 지원합니다. ※ (예시) 서울지역 거주, 소득인정액 80만원, 월세 50만원인 3인가구의 경우, 소득인정액이 생계급여 선정기준 이하이므로 서울 3인가구 기준임대료 470,000원 지급&#13;기준임대료&#13;1인가구: 1급지(서울) 369,000원, 2급지(경기·인천) 300,000원, 3급지(광역시·세종시·수도권외 특례시) 247,000원, 4급지…",
+  "criteria": "주거급여 대상은 아래 소득인정액 기준을 충족하여야 합니다.(2026년 기준)&#13;2026년도 기준 주거급여 대상은 소득인정액 기준(기준 중위소득 48% 이하)은 다음과 같습니다.&#13;1인 가구: 1,230,834원/월&#13;2인 가구: 2,015,660원/월&#13;3인 가구: 2,572,337원/월&#13;4인 가구: 3,117,474원/월&#13;5인 가구: 3,627,225원/월&#13;"
  },
  {
   "id": "WLF00000888",
@@ -535,7 +649,10 @@ const EXTRA_PROGRAMS = [
   "target": "다문화·탈북민,보훈대상자,장애인,저소득,한부모·조손",
   "theme": "주거",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000888&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000888&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "생계급여·의료급여 수급자, 국가유공자, 일본군위안부 피해자, 지원대상 한부모가족, 도시근로자 월평균소득 70% 이하의 북한이탈주민 및 장애인 등 무주택세대 구성원을 대상으로 합니다.&#13;",
+  "content": "시세의 30% 수준의 저렴한 임대료의 영구임대주택을 공급합니다.&#13;",
+  "criteria": "무주택자로서 아래에 해당하는 사람을 대상으로 공급합니다. * 지자체 기준에 따라 모집 기준 상이&#13;「국민기초생활 보장법」상의 생계급여수급자 또는 의료급여수급자&#13;유공자 또는 그 유족(참전유공자 유족 제외) 등으로서 수급자 선정기준의 소득인정액 이하이고 영구임대 자산요건을 충족하는 자&#13;일본군위안부 피해자&#13;지원대상 한부모가족&#13;북한이탈주민으로서 전년도 도시근로자 가구당 월평균소득의 70%이하이고, 영구임대 자산요건을 자&#13;장애인등록증이 교부된 자(지적장애인ㆍ정신장애인 및 장애의 정도가 심한 뇌병변 장…"
  },
  {
   "id": "WLF00003244",
@@ -546,7 +663,10 @@ const EXTRA_PROGRAMS = [
   "target": "다문화·탈북민,다자녀,보훈대상자,장애인,저소득,한부모·조손",
   "theme": "주거",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003244&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003244&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "입주자모집공고일 현재 무주택세대구성원으로 소득 및 자산보유기준을 충족하는 사람을 대상으로 합니다.&#13;",
+  "content": "시세의 60~80% 수준의 저렴한 임대료의 국민임대주택을 공급합니다.&#13;",
+  "criteria": "무주택세대구성원으로 아래 소득요건을 충족하여야 합니다.&#13;- 소득 : 도시근로자 월평균 소득의 50%, 70%, 100% 이하(면적에 따라 상이)&#13;- 총자산 : 가계금융복지조사에 따른 소득3분위의 순자산 평균값 이하&#13;- 자동차 : 3천5백만원에 국가데이터에서 발표하는 전년도 운송장비 소비자물가지수를 곱하여 산정한 금액 이하&#13;우선공급 대상자는 다음과 같습니다.&#13;- 사업지구 철거민 등&#13;- 사회보호계층 등*&#13;- 미성년자인 3명 이상의 자녀가 있는 세대주&#13;- 영구임대주택 퇴거자&#13…"
  },
  {
   "id": "WLF00004649",
@@ -557,7 +677,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득,한부모·조손",
   "theme": "주거",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004649&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004649&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "대학생, 청년(19~39세 등), (예비) 신혼부부, 한부모 가족, 고령자(65세 이상), 주거급여 수급자, 산업단지 근로자, 창업인, 지역전략산업종사자, 중소기업전용주택에 입주하는 장기 근속자를 대상으로 지원합니다.&#13;",
+  "content": "전용면적 60㎡ 이하 주택을 입주계층에 따라 인근 임대시세보다 60~80% 저렴한 임대료로 최대 6년~20년까지 거주 가능한 공공임대주택을 공급합니다.&#13;각 계층별 임대료는 다음과 같습니다&#13;- 대학생, 소득이 없는 청년 : 시세의 68%&#13;- 소득이 있는 청년, 창업 및 지역전략산업 지원주택 입주자 : 시세의 72%&#13;- (예비)신혼부부, 한부모가족, 산업단지근로자, 중소기업전용주택 입주 장기근속자 : 시세의 80%&#13;- 고령자 : 시세의 76%- 주거급여수급자 : 시세의 60%&#13;행복주택의 최대…",
+  "criteria": "입주자 모집공고일 현재 다음의 행복주택 해당 입주자 자격을 만족하는 자에게 1세대 1주택의 기준으로 공급합니다.* 1인 1주택 또는 2인 1주택 기준으로 공급 가능 &#13;(대학생)&#13;- 미혼인 무주택자로서 대학에 재학중이거나 다음학기에 입,복학예정인 사람 또는 고등학교를 졸업, 중퇴 후 2년 이내인 사람&#13;- (소득기준) 본인 및 부모 합계소득이 전년도 도시근로자 가구원수별 가구당 월평균소득의 120%이하(1인가구), 110%이하(2인가구), 100%이하(3인이상가구)- (자산기준) 본인 총 자산 1억원, 자동차 미소…"
  },
  {
   "id": "WLF00004663",
@@ -568,7 +691,10 @@ const EXTRA_PROGRAMS = [
   "target": "다문화·탈북민,다자녀,보훈대상자,장애인,저소득,한부모·조손",
   "theme": "주거",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004663&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004663&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "일반공급 : 청년, 신혼부부, 한부모가족, 고령자, 일반 가구&#13;우선공급 : 철거민, 국가유공자, 장기복무제대군인, 북한이탈주민, 다자녀가구, 장애인, 비주택 거주자, 기초생활 보장제도 급여 수급자 등에게 공급&#13;",
+  "content": "주거 취약계층에게 통합공공임대주택을 공급합니다.&#13;",
+  "criteria": "일반공급 선정기준은 다음과 같습니다.&#13;- (청년) 18세&amp;sim;39세 이하이며 혼인 중이 아닐 것, 중위소득 150%이하&#13;- (신혼부부ㆍ한부모가족)혼인기간이 7년 이내인 사람, 예비신혼부부, 6세 이하 자녀를 둔 사람, 6세이하 자녀를 둔 한부모 가족, 중위소득 150%이하&#13;- (고령자) 65세 이상, 중위소득 150%이하, 총자산 34,500만원 이하, 자동차 3,708만원 이하&#13;- (일반) 무주택세대구성원, 중위소득 150%이하&#13;우선공급 선정기준은 다음과 같습니다.&#13;- (철거민…"
  },
  {
   "id": "WLF00000057",
@@ -579,7 +705,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "주거",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000057&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000057&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "입주자모집공고일 현재 해당 주택건설지역(특별시·광역시·특별자치시·특별자치도 또는 시·군의 행정구역을 말함)에 거주하는 무주택세대구성원으로서&#13;해당 세대의 소득 및 보유자산(토지, 건물 및 자동차)이 국토교통부장관이 정하는 기준 이하인 자&#13;",
+  "content": "(공공분양) 국토교통부 장관이 정한 소득 및 자산기준을 만족하는 무주택세대구성원에게 1세대 1주택 기준으로 &amp;ldquo;공공분양주택&amp;rdquo; 공급&#13;(분양전환공공임대(5년,10년)) 국토교통부 장관이 정한 소득 및 자산기준을 만족하는 무주택세대구성원에게 1세대 1주택 기준으로 &amp;ldquo;임대의무기간(5년, 10년) 임대 후 분양전환되는 공공임대주택&amp;rdquo; 공급&#13;",
+  "criteria": "공급유형별로 다음의 소득기준을 충족하여야 합니다.&#13;(일반공급)&#13;- (전용면적 60㎡ 이하) 공공분양 및 분양전환공공임대주택 : 전년도 도시근로자 가구당 월평균소득 100% 이하&#13;- (그 외 주택) 소득기준 없음※ 해당 연도별 적용 금액은 입주자모집공고문을 참고&#13;(특별공급)&#13;- (생애최초 특별공급) 전년도 도시근로자가구 평균소득 130% 이하&#13;※ 70%를 월평균 소득 100% 이하에 우선 공급&#13;- (신혼부부 특별공급) 전년도 도시근로자가구 평균소득 130% 이하 (다만, 맞벌이부부는…"
  },
  {
   "id": "WLF00001108",
@@ -590,7 +719,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "생활지원,서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001108&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001108&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "일반 주택연금 가입요건은 다음과 같습니다.&#13;- 만 55세 이상(부부인 경우 연장자 기준)&#13;- 합산가격 공시가격 12억원 이하 주택 소유자&#13;- 부부기준 보유주택 합산가격&#13; · 공시가격 12억원 이하시 : 거주하는 1주택으로 주택연금 가입&#13; · 공시가격 12억원 초과시 : 2주택을 보유한 경우에 한하여 3년 이내에 담보주택외의 주택을 처분하는 조건으로 가입&#13;주택법상 주택 및 노인복지주택, 주택면적 1/2이상인 복합용도주택, 주거목적 오피스텔을 대상으로 합니다.&#13;",
+  "content": "주택연금을 매달 지급(월 지급금은 주택가격 및 연령에 따라 산정)하고, 종신거주를 보장합니다.&#13;주택연금을 일시 인출금(주택가격 및 연령에 따라 산정)으로 지급하여 선순위 채권(대출금, 임차보증금 등) 상환이 가능합니다.&#13;다음과 같은 세제혜택을 드립니다. &#13;근저당설정시 등록세 50% 감면(2027.12.31까지, 주택보유수 및 주택가격에 따라 차등감면 적용)·농특세 면제, 국민주택채권 매입 면제&#13;재산세 25% 감면(신탁방식도 포함, 2027.12.31.까지, 1가구 1주택인 경우로 한정, 시가표준액 5억원…",
+  "criteria": "지원대상을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00000093",
@@ -601,7 +733,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "주거,서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000093&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000093&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "주택도시기금 버팀목 전세자금대출보증 대상은 다음과 같습니다.&#13;임차보증금 7억원 이하(지방소재 가구는 5억원 이하)인 임대차계약을 체결한 자&#13;임차보증금의 5% 이상 지급한 세대주&#13;본인과 배우자(배우자예정자 포함)의 합산한 주택보유수가 1주택 이내인 자&#13;본인과 배우자(배우자예정자 포함)가 규제대상아파트(투기지역 또는 투기과열지구 소재 시가 3억원 초과 아파트)를 취득하지 않을 것&#13;보증대상목적물이 노인복지주택인 경우 「노인복지법」에서 정하는 입소자일 것&#13;주택도시기금 버팀목 전세자금대출보증 대상자…",
+  "content": "임차보증금 수도권 7억원 이하, 지방 5억원 이하 주택을 대상으로 대출금의 90%이내에서 보증을 지원합니다. &#13;보증한도는 보증 신청인의 개인별 연간소득금액 및 연간부채상환 예상액에 따라 다르게 적용&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00001079",
@@ -612,7 +747,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "주거,서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001079&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001079&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "보증금 1억원 이하 및 월세 60만원 이하인 월세계약을 체결한 주택도시기금 주거안정 월세대출 대상자를 지원합니다.&#13;단, 아래의 사유에 해당되는 분은 보증을 이용할 수 없습니다.&#13;보증신청일 현재 공사의 구상권 또는 유동화미수채권 등이 회수되지 아니한 주채무자와 그 배우자 및 채무관계자* 다만, 법적 변제의무 종결자 및 물적담보제공자는 제외&#13;공사에서 정한 보증사고 사유에 해당되어 사고처리(사고처리 유보 포함, 이하 같다)된 자와 그 배우자 및 채무관계자&#13;공사 개인신용평가시스템에 의한 보증거절등급자&#13;신…",
+  "content": "임대차계약에 따른 월세 지급을 위한 월세자금대출 시, 1,152만원 한도로 보증을 제공합니다.&#13; &#13;월 최대 60만원, 2년간 960만원에 대해 80% 부분보증 지원&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006293",
@@ -623,7 +761,10 @@ const EXTRA_PROGRAMS = [
   "target": "보훈대상자",
   "theme": "서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006293&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006293&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "4ㆍ19혁명공로자를 대상으로 지원합니다. : 1960년 4월 19일을 전후한 혁명에 참가한 사람 중 4ㆍ19혁명사망자 또는 4ㆍ19혁명상이자에 해당하지 아니하는 사람으로서 건국포장을 받은 사람&#13;",
+  "content": "&#13; &#13; &#13; &#13;월 지급액 501,000원을 지급합니다. 단, 유족에게 승계되지 않습니다. &#13; &#13;",
+  "criteria": "&#13; &#13; &#13; &#13;지원대상의 내용을 참고해주시기 바랍니다. &#13; &#13;"
  },
  {
   "id": "WLF00006294",
@@ -634,7 +775,10 @@ const EXTRA_PROGRAMS = [
   "target": "장애인",
   "theme": "생활지원,보호·돌봄,법률",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006294&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006294&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "장애인복지법 제32조 및 동 법 시행령, 시행규칙에 따른 장애정도판정기준에 맞으면 장애인 등록증을 발급할 수 있다.&#13;",
+  "content": "등록된 장애인에 대한 복지서비스에 대한 자세한 안내는 관할 주소지 행정복지센터에 문의하여 주시기 바랍니다.",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006296",
@@ -645,7 +789,10 @@ const EXTRA_PROGRAMS = [
   "target": "보훈대상자",
   "theme": "서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006296&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006296&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "국가유공상이자(1~7급), 5.18민주화운동부상자(1~14급), 고엽제후유의증(고도ㆍ중등도ㆍ경도), 애국지사, 보훈보상대상자ㆍ지원대상자(1~7급)를 대상으로 지원합니다.&#13;",
+  "content": "구매보조금 : 국가유공자 보철용 친환경 차량(전기 또는 수소차) 구입 시 정액(1백만원) 지원&#13;충전비 : 국가유공자 보철용 친환경 차량(전기 또는 수소차) 연료비 지원(월29천원 한도 이내)&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006292",
@@ -656,7 +803,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "임신·출산,서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006292&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006292&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "난임치료를 받기 위하여 휴가를 사용하려는 남녀 근로자 중 아래의 요건을 모두 갖춘 근로자를 대상으로 지원합니다.&#13;남녀고용평등법 제18조의3 난임치료휴가를 사용한 우선지원대상기업 소속 근로자일 것&#13;휴가가 끝난 날 이전까지의 피보험 단위기간이 180일 이상일 것&#13;휴가를 시작한 날 이후 1개월부터 끝난 날 이후 12개월 이내에 신청&#13;",
+  "content": "난임치료휴가급여 : 남녀고용평등법에 따른 난임치료휴가 기간 중 최초 2일분 통상임금 100% 지급(상한액 168,420원)&#13;",
+  "criteria": "&#13; &#13; &#13; &#13;지원대상의 내용을 참고해주시기 바랍니다. &#13; &#13;"
  },
  {
   "id": "WLF00006282",
@@ -667,7 +817,10 @@ const EXTRA_PROGRAMS = [
   "target": "보훈대상자",
   "theme": "서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006282&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006282&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "국가보훈대상자(보훈관계법령에 따라 지원받는 본인 및 유가족)를 지원합니다.&#13;",
+  "content": "국가유공자 및 유가족 대상 상담, 심리검사, 프로그램 지원 등을 통해 심리적 안정 및 사회 적응을 지원합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006295",
@@ -678,7 +831,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "서민금융,법률",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006295&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006295&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "&#13; &#13; &#13; &#13;별도의 지원대상, 지원요건은 없으며, 모든 주민들이 마을변호사 제도의 혜택을 받을 수 있습니다. &#13; &#13;",
+  "content": "마을변호사는 비상근이므로 전화, 팩스, 이메일 등 원격상담을 원칙으로 하나, 경우에 따라 마을변호사가 직접 마을을 방문하여 대면상담을 진행(가능여부 읍면동 문의필요)ㅠ&#13;전화상담의 경우, 주민이 읍·면·동 행정복지센터, 지방변호사회, 법무부를 통해 마을변호사 연락처 확인 후 마을변호사에게 연락하여 상담진행&gt;&#13;팩스/이메일 상담의 경우, 주민이 읍·면·동 행정복지센터에 비치된 마을 변호사 상담카드 작성 후, 마을변호사에게 팩스/이메일 등의 방법으로 상담카드를 송부, 마을 변호사 상담카드 검토 및 회신&#13;현장 상담…",
+  "criteria": "&#13; &#13; &#13; &#13;지원대상의 내용을 참고해주시기 바랍니다. &#13; &#13;"
  },
  {
   "id": "WLF00006288",
@@ -689,7 +845,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득",
   "theme": "서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006288&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006288&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "소득, 신용 등에 맞는 맞춤형 금융상품을 알아보고자 하는 서민, 취약계층을 지원합니다.&#13;※ 연계 금융상품별 지원 대상 상이&#13;",
+  "content": "서민금융 잇다(https://loan.kinfa.or.kr) 플랫폼을 통해 금융상품 알선 및 맞춤 추천 서비스 이용이 가능합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006241",
@@ -700,7 +859,10 @@ const EXTRA_PROGRAMS = [
   "target": "장애인",
   "theme": "정신건강,서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006241&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006241&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "정신질환으로 인하여 적시에 적절한 치료가 필요한 자를 대상으로 지원합니다.&#13;자·타해 위험이 발생하여 즉각적으로 응급·행정입원이 필요한 자&#13;정신질환의 만성화 예방 및 지속치료 동기부여가 필요한 초발 정신질환자 및 외래치료 지원(법64조)을 받은 자&#13;정신건강의학과전문의에게 진단(F20-29, F30, F31, F33, F34)을 받은 지 5년 이내인 정신질환자&#13;권역정신응급의료센터에 내원하여 정신응급환자&#13;",
+  "content": "지원항목&#13;본인일부부담금에 해당되는 진찰료, 입원료, 식대, 투약 및 조제료, 주사료, 마취료, 정신요법료, 검사료, 영상진단료, 국가적 위기상황에 준하는 감염병 확산 시 검사비* 등 지원 * (감염병 검사비) 감염병 중 특히 전파 위험이 높은 감염병으로서 국가적 차원의 위기대응이 필요하여 별도의 안내 또는 지침이 있는 경우 이를 준수하여 지원 가능&#13;지원금액&#13;지원 종류 관계없이 1인당 연간 450만원 한도* 내 지원 * 권역정신응급의료센터 정신응급 치료비는 연간 최대 100만원 한도 내 지원&#13;지원대상별 세…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006264",
@@ -711,7 +873,10 @@ const EXTRA_PROGRAMS = [
   "target": "다자녀,저소득",
   "theme": "일자리",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006264&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006264&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "근로자, 특수형태근로종사자, 1인 자영업자(산재보험 가입 중소기업사업주) 중 각 요건 해당자&#13;(재직요건) 신청일 현재 소속 사업장에 3개월 이상 근로 도는 산재보험 가입기간이 3개월 이상인 1인 자영업자(융자신청일이 속한 달의 직전달 말일에 고용된 근로자가 없는 사람에 한함)&#13;(소득요건) 월평균 소득이 3인가구 기준 중위소득 이하('26년 5,359,036원) * 소득요건은 은행에서 판단&#13;",
+  "content": "융자한도&#13;혼례비: 2,000만 원&#13;자녀양육비: 2,000만 원 한도 내 자녀 1인당 1,000만 원(18세 미만 자녀)&#13;노부모부양비: 2,000만 원 한도 내 (조)부모 1인당 500만 원&#13;장례비: 1,000만 원 * 1인당 2,000만 원 한도&#13;융자금리 및 상환방법 : 개인 신용 대출금리에서 3.0%p 이내 보전, 1년거치 3년/4년 균등분할상환 중 선택&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006291",
@@ -722,7 +887,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득,한부모·조손",
   "theme": "신체건강,서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006291&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006291&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "연령기준 : 만 60세 이상인 자&#13;진단기준 : 의료기관에서 요실금으로 진단(주·부상병으로 아래 상병코드 중 하나 이상 포함)을 받고 의료비를 지출한 자 R32 상세불명의 요실금, N394 기타 명시된 요실금, N3941 혼합성 요실금, N393 스트레스(복압성) 요실금, N3940 절박성 요실금, N3948 기타 명시된 요실금(범람 요실금, 반사성 요실금, 전체 요실금)&#13;소득수준 :「국민기초생활보장법」에 따른 수급자 또는 차상위계층, 「한부모가족지원법」에 따른 지원대상자&#13;※차상위계층은 &amp;#9312; 차상…",
+  "content": "지원 대상자는 요실금 치료 후 우선 의료기관에 의료비를 납부하고, 처방전·영수증·진료비 상세내역서 등 의료비 청구를 위해 필요한 구비서류 발급 요청&#13;청구된 의료비 중 지원 범위에 해당하는 금액을 확인하여 신청한 계좌로 의료비 지급&#13;검사비, 약제비, 물리치료비, 수술비 등 요실금 치료 관련 의료비 본인부담금을 연 100만원 범위 내에서 실비 지원 ※ 예산 소진 시 조기 마감될 수 있음&#13;단, 1회 시술·수술의 본인부담금이 100만원을 초과하는 경우* 예외적으로 연 200만원까지 지원 가능 * 인공요도괄약근수술(R3…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006289",
@@ -733,7 +901,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "임신·출산,보호·돌봄",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006289&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006289&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "임신 중이거나 분만 후 6개월 미만으로 출산 및 양육에 어려움을 격고 있는 위기임산부, 보호출산 산모, 보호출산 아동 및 아동의 생부를 대상으로 지원합니다. * 연령, 혼인여부, 소득 관계 없음&#13;",
+  "content": "365일, 24시간 상담 서비스&#13;전국 17개 지역상담기관에 전문 상담원 배치&#13;맞춤형 상담 진행(전화, 홈페이지, 카카오톡, 대면)&#13;비밀상담&#13;긴급상황 시 방문, 지원 서비스&#13;긴급상황 시 현장 지원(응급분만, 폭력, 홈리스 등)&#13;일시 주거 지원 및 지역기관 연계&#13;맞춤형 지원 연계 서비스&#13;임신지원연계(임신, 정신, 건강 진료비 지원 등)&#13;출산지원연계(진료비 지원, 산후조리 관련 지원 등)&#13;양육지원연계(아동수당, 보육료 지원 등)&#13;보호출산 산모 지원&#13;의료…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006287",
@@ -744,7 +915,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006287&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006287&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "형사처분 또는 보호처분을 받은 사람으로서 자립갱생을 위한 숙식제공, 주거지원, 창업지원, 직업훈련 및 취업지원 등 보호의 필요성이 인정되는 사람을 대상으로 지원합니다.&#13;",
+  "content": "숙식제공, 기초건강지원, 긴급지원, 기타 자립지원, 주거지원, 주거환경 개선, 결혼 및 가족 희망 지원, 직업훈련·허그일자리·취업알선·창업지원 등을 지원합니다.&#13;숙식제공 : 가족이나 친지 등 연고자가 없는 불우출소자를 대상으로 숙식과 의복 등을 제공하고, 각종 생활지도를 통해 건전한 자립을 유도※ 기간: 기본 6개월, 6개월 범위 내 3회 연장 가능&#13;기초건강지원 : 보호대상자의 기초건강(건강검진, 통원 의료비, 고위험군 대상자 정신건강 치료지원) 지원을 통해 신체‧정신적으로 건강한 자립을 유도&#13;긴급지원 : 질병…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006286",
@@ -755,7 +929,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "교육",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006286&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006286&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "(지원 대상) 대한민국 국적자로 최종 학력이 고졸이며, 성적 및 재직요건을 충족한 자&#13;최종 학력은 재단 보유 졸업자 데이터, 국가평생교육진흥원 학점은행제 데이터, 대학이 제공하는 입학유형을 기준으로 함&#13;직전 학기 성적이 100점 만점의 70점 이상인 재학생&#13;전문학사 취득자가 전공 심화 과정 및 4년제 대학에 신·편입하는 경우 별도 조건을 적용하여 예외적으로 지원 가능&#13;[고졸 후학습자 장학사업 대상 대학]&#13;「고등교육법」 제2조 제1호(대학), 제2호(산업대학), 제4호(전문대학), 제5호(원격대)에…",
+  "content": "현 재직기업 유형 및 규모에 따라 등록금 차등 지원&#13;중소, 중견 기업 재직자 : 등록금 전액 지원&#13;대기업, 비영리기관(비영리법인 및 비사업자) 재직자 : 등록금 50% 지원&#13;신규장학생으로 선발된 겨우 향후 별도 신청 없이 계속 장학생으로 심사 진행되며, 계속 장학생 요건 충족 시 등록금 지원&#13;등록금 고지서 상 우선감면 또는 후 지급됩니다.&#13;",
+  "criteria": "지원대상의 상세 기준은 아래와 같습니다.&#13;1. 연령(30점) : 청년 30점(34세 이하), 비청년 20점(35세), 19점(36세) &amp;hellip; 1점(54세 이상)&#13;2. 재직기관(40점) : 중소·중견기업 40점, 비영리기관 20점, 대기업 10점&#13;3. 출신고교(25점) : 직업계고 25점, 위탁교육과정 수료 20점, 일반고 등 15점, 기학사(전문학사학위 보유자) 10점&#13;4. 기업 재직기간(5점) : 6년 이상 5점, 5년 이상 4점, 4년 이상 3점, 3년 이상 2점, 2년 이상 1점,…"
  },
  {
   "id": "WLF00001111",
@@ -766,7 +943,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "문화·여가",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001111&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001111&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "취약지역 거주 만60세 이상 국민을 대상으로 합니다.※ 취약지역: 소멸위험지역(130개) 및 문화환경 취약지역(69개)&#13;",
+  "content": "취약 지역의 노인 대상 연령대별 맞춤형 문화프로그램을 기획, 운영 등을 지원합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006285",
@@ -777,7 +957,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "신체건강,임신·출산,서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006285&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006285&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "｢모자보건법 시행령｣ 제14조에 해당하는 의학적 사유에 의한 생식건강의 손상으로 영구 불임이 예상되는 자 ※ 의학적 사유: 모자보건법 시행령 제14조&#13;1. 유착성자궁부속기절제술&#13;2. 부속기종양적출술&#13;3. 난소부분절제술&#13;4. 고환적출술&#13;5. 고환악성종양적출술&#13;6. 부고환적출술&#13;7. 항암치료(항암제 투여, 복부 및 골반 부위 포함 방사선 치료, 면역 억제 치료)&#13;8. 염색체 이상(터너증후군, 클라인펠터증후군, 균형전이에 따른 생식기 기능 저하)&#13;주민등록이 되어 있는 대한민…",
+  "content": "지원범위 : 검사, 과배란유도, 생식세포(난자․정자) 채취, 동결, 보관 비용 일부 지원&#13;지원횟수 : 생애 1회&#13;지원금액 : 본인부담금의 50%, 여) 최대 200만 원, 남) 최대 30만 원&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006284",
@@ -788,7 +971,10 @@ const EXTRA_PROGRAMS = [
   "target": "한부모·조손",
   "theme": "서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006284&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006284&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "자립의지가 있는 저소득(중위소득 100%이하) 무주택 한부모가족&#13;",
+  "content": "입주 기간 : 최장 6년 이내로 하되, 2년마다 입주자격 재심사 후 연장여부 결정&#13;※ 연장 시 입주자선정심사위원회의 심의가 필요하며, 입주기간의 성과･자립계획 등을 종합적으로 심사하여 연장 결정※ 거주기간 6년이 도래하였으나 퇴거가 어려운 사정이 있으며 입주대기자가 없는 경우, 입주자선정심사위원회에서 입주대기자 발생 전까지 입주기간 특별연장 가능&#13;입주 방식&#13; - 공동생활지원형 매입임대주택 주거지원의 취지(공동생활가정 구성 및 생활 지원)에 따라 임대주택 1호당 2가구 이상 입주 가능 - 주택 규모, 가족 구성,…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00003242",
@@ -799,7 +985,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "신체건강",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003242&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003242&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "12세 이하 어린이를 대상으로, 17종 예방접종 비용에 대해 지원합니다. ※ 2026년 기준, 2013년 1월 1일 이후 출생자&#13;65세 이상 성인(1961년 12월 31일 이전 출생자)에게 폐렴구균 예방접종(PPSV23) 비용 지원&#13;사람유두종바이러스 감염증(HPV) 예방접종 : 12세 남성청소년(2014. 1. 1.~2014. 12. 31. 출생자), 12~17세 여성청소년(2008. 1. 1.~2014. 12. 31. 출생자), 18~26세 저소득층&#13; * 여성(1999. 1. 1.~2007. 12.31. 출생…",
+  "content": "2026.1.1. ~ 2026.12.31.을 사업기간으로 하는 예방접종 비용 지원&#13;주소지와 상관없이 보건소 및 지정 의료기관에서 받은 국가예방접종 비용(백신비 및 예방접종 시행비용) 전액을 무료로 지원합니다. &#13;예방접종도우미 누리집(nip.kdca.go.kr)에서 확인 가능&#13;2026년 지원대상 백신은 다음과 같습니다. &#13;결핵(BCG, 피내용), B형간염(HepB), 디프테리아/파상풍/백일해(DTaP), 파상풍/디프테리아(Td), 파상풍/디프테리아/백일해(Tdap), 폴리오(IPV), 디프테리아/파상풍/백…",
+  "criteria": "지원대상의 내용을 참고해 주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006227",
@@ -810,7 +999,10 @@ const EXTRA_PROGRAMS = [
   "target": "보훈대상자,장애인,저소득",
   "theme": "생활지원",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006227&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006227&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "기초생활수급자, 장애인, 국가유공자, 단체 및 시설을 지원합니다.&#13;(기초생활수급자) 「국민기초생활보장법」에 따라 국가로부터 지원을 받는 기초생활수급자- 생계, 의료급여 수급자&#13;(장애인) 「장애인복지법」에 의한 장애인&#13;(국가유공자) 감면대상 보훈대상 코드가 전상군경(21), 공상군경(23), 4.19혁명 상이자(51), 공상 공무원(61), 국가사회발전특별공로상이자(71), 6.18 자유 상이자(81), 5.18부상자(85)&#13;(단체 및 시설)&#13;- 「장애인복지법」에 의한 장애인 복지시설 및 장애인 복…",
+  "content": "시내전화&#13;기초생활수급자 : 가입비 및 기본료 면제, 75도수(225분) 무료&#13;장애인/국가유공자/단체 : 통화요금 50% 감면&#13;시외전화&#13;기초생활수급자 : 75도수(225분) 무료&#13;장애인/국가유공자/단체 : 통화요금 50%감면(월 통화요금 30,000원 한도)&#13;인터넷전화(VoIP)&#13;생계 및 의료수급자 : 가입비 및 기본료 면제, 150도수(450분) 무료&#13;장애인/국가유공자/단체 : 월 통화료 50% 감면&#13;번호안내&#13;생계 및 의료수급자 : 114 안내요금 면제&#13;…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00000104",
@@ -821,7 +1013,10 @@ const EXTRA_PROGRAMS = [
   "target": "보훈대상자,장애인,저소득",
   "theme": "생활지원",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000104&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000104&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "주민등록상 국내에 거주 중인 보건복지부 등록 시각·청각장애인 또는 국가보훈부 등록 눈·귀 상이등급자를 지원합니다.&#13;저소득층(기초생활수급자, 차상위계층): 무료 보급/ 비저소득층: 자부담비 10만원 유상보급&#13;소득 구분, 장애 정도, 연령 등을 고려하여 선정 후 보급(선착순 보급 아님)&#13;2020~2025년 시각·청각장애인용 TV를 받은 분은 신청 불가&#13;",
+  "content": "시각·청각장애인용 TV 1대를 지급합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해 주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00003219",
@@ -832,7 +1027,10 @@ const EXTRA_PROGRAMS = [
   "target": "장애인",
   "theme": "생활지원",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003219&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003219&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "다음 대상자에게 실시간 통신중계서비스(수어통역, 문자중계)를 제공합니다.&#13;청각 또는 언어장애인과 전화 통화를 원하는 사람&#13;다른 사람과 전화 통화를 원하는 청각장애인, 언어장애인&#13;",
+  "content": "「107 손말이음센터」의 중계사를 통해 통신중계 서비스(수어통역, 문자중계)를 제공합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00000087",
@@ -843,7 +1041,10 @@ const EXTRA_PROGRAMS = [
   "target": "다자녀,보훈대상자,장애인,저소득",
   "theme": "생활지원",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000087&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000087&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "유형별 지방세 비과세감면 대상은 다음과 같습니다.&#13;(기초생활수급자 등 균등할 주민세 비과세)&#13;- 「국민기초생활 보장법」에 따른 수급자&#13;- 「출입국관리법」 제31조에 따른 외국인등록을 한 날부터 1년이 경과되지 아니한 외국인&#13;- 「민법」에 따른 미성년자(그 미성년자가 미성년자가 아닌 자와 「주민등록법」상 같은 세대를 구성하고 있는 경우는 제외한다)- 「주민등록법」에 따른 세대원 및 이에 준하는 개인으로서 대통령령으로 정하는 자&#13;(국가유공자 단체 취득 부동산 지방세 감면)&#13;- 「국가유공자 등…",
+  "content": "유형별 지방세 비과세감면 내용은 다음과 같습니다.&#13;(기초생활수급자 등 균등할 주민세 비과세)- 「지방세법」 제75조에 따른 균등분 주민세 비과세&#13;(국가유공자 단체 취득 부동산 지방세 감면)- 취득 소유하는 부동산의 취득세, 재산세, 지역자원시설세, 등록면허세, 주민세 종업원분 및 사업소분(「지방세법」 제81조제1항 제2호에 따라 부과되는 세액으로 한정) 면제&#13;(노인복지시설 지방세 감면) - 「노인복지법」 제31조에 따른 노인복지시설을 설치ㆍ운영하기 위하여 취득하는 부동산 취득세, 재산세, 지역자원시설세(경로당으…",
+  "criteria": "지원대상의 내용을 참고해 주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00003258",
@@ -854,7 +1055,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득",
   "theme": "입양·위탁,서민금융",
   "apply": "Y",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003258&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003258&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "아동발달지원계좌(디딤씨앗통장) 지원대상은 다음과 같습니다.&#13;(보호대상아동) 만 18세 미만의 아동복지시설(아동양육시설, 공동생활가정) 보호아동, 가정위탁 보호아동, 장애인생활시설 아동, 소년소녀가정 아동&#13;(기초생활수급가구 아동) 생계, 의료, 주거, 교육 급여, 차상위계층 수급가구의 만 0세부터 만 17세까지 아동 중 신규 선정하여 만 18세 미만까지 지원&#13;(기 가입 아동 중 가정복귀 및 탈수급가구 아동)&#13;- 보호대상아동이 가정회복으로 중도에 가정으로 복귀하는 아동도 계속 지원&#13;- 기초생활수급가구…",
+  "content": "아동(보호자, 후원자)이 매월 일정금액 적립 시 월 10만원 내의 범위에서 1:2 매칭 지원합니다.&#13;(기본 매칭적립) 아동이 후원자 또는 보호자의 도움 등으로 적립 시 월 5만원 내의 범위에서 1:2로 매칭하여 국가(지자체)가 월 10만원 내 지원&#13;(추가 적립액) 5만원 적립 후 월 45만원(연간 540만원) 내에서 추가 적립 가능, 추가 적립액에 대한 국가 매칭은 없음 * 아동적립금은 월 최대 50만원, 정부 매칭 지원금은 월 최대 5만원까지 가능 &#13;적립금의 사용 용도는 다음과 같습니다.&#13;만 17세(만…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00004997",
@@ -865,7 +1069,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "신체건강,생활지원,보호·돌봄",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004997&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004997&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "상병수당 시범사업 지역 거주 취업자 및 시범사업 지역 소재 사업장 근로자를 지원합니다.&#13;(대상지역)&#13;- 1단계 시범사업 : 서울 종로구, 경기 부천시, 충남 천안시, 전남 순천시, 경북 포항시, 경남 창원시('22.7~'24. 12월 사업종료)&#13;- 2단계 시범사업 : 경기 안양시, 경기 용인시, 대구 달서구, 전북 익산시('23.7~), 충북 충주시, 충남 홍성군, 전북전주시, 강원 원주시('24.7~)- 3단계 시범사업 : 충북 충주시, 충남 홍성군, 전북 전주시, 강원 원주시('24.7~)&#13;(기본 자…",
+  "content": "업무와 관련없는 질병·부상으로 일하기 어려운 기간동안 소득을 지원합니다.&#13;지원에 대한 세부내용은 각 지역 공단에서 확인 필요&#13;근로활동불가 모형(대구 달서구, 경기 안양시)의 경우 질병·부상으로 일을 하지 못하는 기간(대기기간 7일 제외)에 대해 일 47,560원 지급하고, 1년 동안 최대 150일까지 지원 가능합니다.&#13;혼합 근로활동불가 모형(경기 용인시, 전북 익산시)의 경우 질병·부상으로 인한 4일 이상 입원 발생 시 대기기간 없이 지급, 재택·외래는 일을 하지 못한 기간(대기기간 7일 제외)에 대해 일 47…",
+  "criteria": "국민건강보험공단에서 자격 및 의료인증 심사를 통해 급여 지급을 결정합니다.&#13;"
  },
  {
   "id": "WLF00005032",
@@ -876,7 +1083,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "생활지원,입양·위탁",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005032&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005032&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "위기아동 가정보호 참여 가정 및 전문위탁아동을 보호 중인 전문위탁가정을 대상으로 지원합니다.&#13;(위기아동 가정보호) 즉각분리 또는 응급조치에 따라 원가정에서 분리된 만 6세 미만 학대피해아동&#13;(전문가정위탁) 보호대상아동 중 2세 이하 영아, 학대피해아동, 장애아동, 경계선지능아동 등 전문적 보호 필요 아동&#13;",
+  "content": "위기아동 가정보호 또는 전문가정위탁 책정된 아동 1인당 월 100만원을 지급합니다.&#13;",
+  "criteria": "위탁가정 요건(전문위탁부모 자격)은 다음과 같습니다.&#13;일반가정위탁(공통 기준) 각 기준을 충족&#13;가정위탁보호자 경험이 3년 이상이거나, 다음의 어느 하나에 해당하는 자격을 충족&#13; -「사회복지사업법 시행령」 제2조제1항에 따른 사회복지사&#13; -「영유아보육법」 제21조제2항에 따른 보육교사&#13; -「유아교육법」 제22조제2항에 따른 교사&#13; -「초･중등교육법」 제21조제2항에 따른 교사&#13; -「의료법」 제2조제1항에 따른 의료인&#13; -「청소년 기본법」 제22조제1항에 따른 청소년상담사 -「고…"
  },
  {
   "id": "WLF00005033",
@@ -887,7 +1097,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "생활지원,입양·위탁",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005033&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005033&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "위기아동 가정보호 및 전문가정위탁 책정 시 최초 1회 지원합니다.&#13;(위기아동 가정보호) 즉각분리 또는 응급조치에 따라 원가정에서 분리된 만 6세 미만 학대피해아동&#13;(전문가정위탁) 보호대상아동 중 2세 이하 영아, 학대피해아동, 장애아동, 경계선지능아동 등 전문적 보호 필요 아동&#13;",
+  "content": "위기아동 가정보호 및 전문가정위탁 책정 시 아동용품구입비 100만원을 1회 지급합니다.&#13;단, 기존에 다른 아동을 위기아동 가정보호 또는 전문가정위탁으로 보호하여 아동용품구입비(국비)를 지원받은 이력이 있는 가정은 50만원 지원&#13;",
+  "criteria": "위탁가정 요건(전문위탁부모 자격)은 다음과 같습니다.&#13;일반가정위탁(공통 기준) 각 기준을 충족&#13;가정위탁보호자 경험이 3년 이상이거나, 다음의 어느 하나에 해당하는 자격을 충족&#13; -「사회복지사업법 시행령」 제2조제1항에 따른 사회복지사&#13; -「영유아보육법」 제21조제2항에 따른 보육교사&#13; -「유아교육법」 제22조제2항에 따른 교사&#13; -「초･중등교육법」 제21조제2항에 따른 교사&#13; -「의료법」 제2조제1항에 따른 의료인&#13; -「청소년 기본법」 제22조제1항에 따른 청소년상담사 -「고…"
  },
  {
   "id": "WLF00001120",
@@ -898,7 +1111,10 @@ const EXTRA_PROGRAMS = [
   "target": "다문화·탈북민,장애인,저소득,한부모·조손",
   "theme": "정신건강,문화·여가,교육,보호·돌봄",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001120&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001120&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "다음의 사항 중 하나에 해당하는 자로서 종합적인 교육지원이 필요하다고 사업학교의 장이 인정하는 학생을 지원합니다.&#13;- 「국민기초생활보장법」 제12조에 따른 교육급여 수급권자&#13;- 「국민기초생활보장법」 제2조제10호에 따른 차상위 계층의 자녀&#13;- 「한부모가족지원법」 제5조에 따른 보호대상자인 한부모가족의 자녀&#13;- 「북한이탈주민의 보호 및 정착지원에 관한 법률」 제2조제2호에 따른 보호대상자의 자녀&#13;- 「다문화가족지원법」 제2조제1호에 따른 다문화가족의 자녀&#13;- 「장애인 등에 대한 특수교육법」…",
+  "content": "사업학교에서 대상학생에게 교육과정과 연계한 학습, 문화·체험, 심리·정서, 보육·복지 등을 종합적으로 지원합니다.&#13;(학습) 교육과정과 연계한 기초학습능력 확보 및 학습결손 치유, 예방 프로그램 운영* 예시 : 일대일 학습, 방과후학교 프로그램, 방학 중 캠프, 대학생 멘토링 등&#13;(문화 체험) 각종 현장체험학습 실시로 문화체험 기회 결핍을 해소하고 살아있는 학습 경험을 제공하여 교육 효과 극대화* 예시 : 예술제, 축제, 캠프, 동아리, 자원봉사활동, 박물관 및 미술관 견학 등)&#13;(심리,심성) 건강한 자아 형성…",
+  "criteria": "시도교육감이 지역의 여건 및 사업대상 학생의 수, 비율 등을 고려하여 사업학교 선정기준을 정합니다.※ 우선지원학생 40명 이상인 학교 등 &#13;"
  },
  {
   "id": "WLF00003188",
@@ -909,7 +1125,10 @@ const EXTRA_PROGRAMS = [
   "target": "다문화·탈북민",
   "theme": "교육",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003188&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003188&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "국공립 유치원, 초등학생, 중학생, 고등학생 중 다문화 가정의 학생과 탈북 학생을 지원합니다.&#13;",
+  "content": "다문화 가정의 학생과 탈북 학생의 기초학습을 지도합니다.&#13;다문화 가정의 학생과 탈북 학생의 진로를 지도합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00001142",
@@ -920,7 +1139,10 @@ const EXTRA_PROGRAMS = [
   "target": "다문화·탈북민",
   "theme": "교육",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001142&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001142&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "초, 중등학교에 재학중인 탈북학생을 지원합니다.&#13;",
+  "content": "탈북학생에게 맞춤형 멘토링 프로그램 제공 등을 위해 시·도교육청 및 학교별 사업비를 지원합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해 주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00003246",
@@ -931,7 +1153,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "신체건강,임신·출산",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003246&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003246&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "'임신확인서'로 임신이 확인된 만 19세 이하의 청소년산모를 지원합니다.&#13;",
+  "content": "임신 1회당 120만원이내의 의료비를 지원합니다.&#13;",
+  "criteria": "만 19세 이하 산모로 '청소년산모 임신 출산 의료비 지원' 신청자를 지원합니다. &#13;임신확인서 상 임신확인일 기준으로 만 19세 이하까지 지원&#13;"
  },
  {
   "id": "WLF00004638",
@@ -942,7 +1167,10 @@ const EXTRA_PROGRAMS = [
   "target": "다자녀,보훈대상자,장애인,저소득",
   "theme": "서민금융",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004638&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004638&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "기초생활수급자 (생계급여, 주거급여, 의료급여, 교육급여)&#13;차상위계층(「국민기초생활보장법법」 제2조제10호)&#13;다자녀가구 (자녀가 3명 이상이거나 손자녀가 3명 이상인 가구)&#13;중증장애인 (「장애인복지법」 제2조제2항에 따른 장애인 중에서 장애의 정도가 심한 장애인)&#13;국가유공자 1~3급 또는 5·18 유공자 1~3급 판정을 받은 사람&#13;독립유공자 또는 그 유족 중 선순위자&#13;관련 시설 : 장애인복지시설, 다함께돌봄센터 및 아동복지시설, 노인복지시설, 한부모가족복지시설, 사회복지시설, 노숙인복지시설…",
+  "content": "경감지원한도&#13;생계/의료급여 수급자 中 에너지이용권 미수급자&#13;취사용 : 1,680원&#13;취사난방용(동절기): 148,000원&#13;취사난방용(기타월): 9,900원&#13;주거급여 수급자 中 에너지이용권 미수급자&#13;취사용 : 840원&#13;취사난방용(동절기): 148,000원&#13;취사난방용(기타월): 4,950원&#13;교육급여 수급자 中 에너지이용권 미수급자&#13;취사용 : 420원&#13;취사난방용(동절기): 148,000원&#13;취사난방용(기타월): 2,470원&#13;생계/의료급여 수급자 中…",
+  "criteria": "「국민기초생활보장법」에서 정한 기초생활수급자(생계급여, 주거급여, 의료급여, 교육급여)&#13;차상위계층(중위소득 50%이하)&#13;자녀가 3명 이상이거나 손자녀가 3명 이상인 가구&#13;「장애인복지법」 제2조제2항에 따른 장애인 중 장애의 정도가 심한 장애인&#13;「국가유공자 등 예우 및 지원에 관한 법률」 및 「5.18 민주유공자 예우에 관한 법률」에서 정한 1~3급 상이자&#13;「독립유공자 예우에 관한 법률」에 의한 독립유공자 또는 수급자&#13;위탁아동의 수와 주민등록표상 자녀를 합쳐서 3명 이상이거나 위탁아동의 수와…"
  },
  {
   "id": "WLF00005445",
@@ -953,7 +1181,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "생활지원,입양·위탁,보호·돌봄",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005445&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005445&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "만 15세 이후 아동복지시설 및 가정위탁 보호가 조기 종료되었거나 (단, 「아동복지법」 시행('24.2.9)이후 만 18세가 된 자부터 적용), 만 18세 이후 보호종료된 자립준비청년(보호종료아동)에게 자립정착금을 지원합니다.&#13;",
+  "content": "지급대상 모두에게 자립정착금 1인당 최소 1,000만원 이상 되도록 지급을 권고합니다. ※ 지자체 재원으로하는 지방이양사업&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00003213",
@@ -964,7 +1195,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "신체건강,임신·출산",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003213&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003213&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "인플루엔자 국가예방접종 지원대상은 다음과 같습니다.&#13;65세이상 어르신(1960.12.31.이전 출생자)&#13;생후 6개월~13세 어린이(2012.1.1.~2025.8.31.출생자)* 접종일 기준 생후 6개월 이상 어린이부터 접종 가능&#13;임신부(임신 여부를 확인할 수 있는 산모 수첩, 고운맘 카드 등 지참)&#13;",
+  "content": "인플루엔자 예방접종 1회를 지원합니다.&#13;- 단, 생후 6개월~만 9세 미만 어린이 중 인플루엔자 예방접종을 처음하거나 이전 접종력을 모르는 경우 등은 2회 접종 지원&#13;* 예방접종 일정 및 접종횟수는 해당절기 사업안내 시 별도 추가 안내하며, 예진의사와 상담&#13;",
+  "criteria": "접종대상 상세기준(출생연도)은 매년 보도자료, 인플루엔자 국가예방접종 지원사업 관리지침 등을 통해 사전 안내, 홍보하오니 참고하시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00006283",
@@ -975,7 +1209,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006283&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006283&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "(재직자) 체불 사업장(폐업된 경우는 제외)에서 재직 중&#13;(퇴직자) 체불 사업장에서 융자 신청일 이전 6개월 이내에 퇴직 * 건설일용근로자는 신청일 이전 180일 이내에 고용보험 근로내용 확인신고서상 근로일수가 30일 이상&#13;(체불요건) 신청일 이전 1년 동안 1개월분 이상 임금 등이 체불&#13; * 건설일용근로자는 전년도 건설업임금실태조사(개별직종노임단가) 중 하반기 보통인부 노임단가 5일분(&amp;rsquo;25년 835,405원) 금액 이상이 체불 ** 다만, 한국신용정보원 연체정보 등이 등록된 근로자 등은 융…",
+  "content": "(재직자) 체불액 범위에서 신청금액(총 1천만원 한도) * 고용위기선제대응지역 사업장에 재직중 근로자는 1천5백만원 고용위기지역 또는 특별고용지원업종 사업장에 재직중 근로자는 2천만원 한도&#13;(퇴직자) 최종 3개월간 임금(또는 휴업수당, 출산전후휴가기간 중 급여), 최종 3년분의 퇴직급여등 중 체불액(총 1천만원 한도)&#13;융자상환: 1년 또는 2년 거치, 3년 또는 4년 원금균등분할상환 중 선택 * 고용위기지역·특별고용지원업종 사업장의 근로자는 2년 거치 4년 상환, 3년 거치 5년 상환도 선택 가능&#13;융자금리: 연…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00001165",
@@ -986,7 +1223,10 @@ const EXTRA_PROGRAMS = [
   "target": "장애인",
   "theme": "보호·돌봄",
   "apply": "Y",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001165&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001165&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "만 18세이상 「장애인복지법」상 등록된 지적 및 자폐성 장애인을 지원합니다.&#13;장애인 당사자 및 가구의 소득수준과 무관하게 신청 가능합니다.&#13;",
+  "content": "발달장애인이 지역사회의 다양한 기관이나 장소를 이용 및 참여하여 동료이용자와 함께 낮시간을 보낼 수 있도록 이용권(바우처) 제공을 지원합니다.※ 기본형 132시간, 확장형 176시간&#13;",
+  "criteria": "지원대상의 내용을 참고해 주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00001178",
@@ -997,7 +1237,10 @@ const EXTRA_PROGRAMS = [
   "target": "장애인",
   "theme": "보호·돌봄",
   "apply": "Y",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001178&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001178&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "만 6세 이상 ~ 만18세 미만의 「장애인복지법」상 등록된 지적 및 자폐성 장애인을 지원합니다.&#13;- 단, 만 18세 이상의 재학생의 경우 방과후활동서비스(재학증명서* 필수)와 주간활동서비스(기본형에 한함) 중 택 1 가능(중복이용 불가)* 발급 1개월 이내의 재학증명서만 유효함&#13;",
+  "content": "만 6세이상~만18세 미만의 청소년 발달장애인이 방과후 안전한 돌봄을 지원받을 수 있도록 방과후활동 이용권(바우처) 월 66시간 제공합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해 주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00004657",
@@ -1008,7 +1251,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "보육",
   "apply": "Y",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004657&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004657&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "2세 미만의 아동(0~23개월)에게 지원합니다.※ 2세부터는 가정양육수당을 지원합니다.&#13;2세 생일이 도래하는 달의 전 달까지 최대 24개월간 지급합니다.&#13;",
+  "content": "0세 아동을 가정 양육하는 경우, 월 100만원을 현금으로 지급합니다.&#13;1세 아동을 가정 양육하는 경우, 월 50만원을 현금으로 지급합니다.&#13;2026년 보육시설(어린이집) 이용 시, 영유아 보육료 신청 필요 &#13;0세는 어린이집 재원 시, 월 보육료 전액(보육료바우처 584,000원) + 부모급여 차액 현금 416,000원 지급&#13;1세는 어린이집 재원 시, 월 보육료 전액(보육료바우처 515,000원) 지급 + 차액없음 ※ 1세 아동이 0세반에 재원하는 경우 부모급여 차액 없음, 1세 아동이 1세 1세반에 재…",
+  "criteria": "2025.1.1 이후 출생한 0세 아동과 '2024. 1. 1~2024. 12. 31'에 출생한 1세 아동&#13;별도의 소득인정액 기준 없음&#13;대한민국 국적을 보유한 아동(부모가 모두 외국인이라도 아동이 한국 국적이면 지원 가능)&#13; - 「국적법」에 따른 복수국적자 포함&#13; - 「난민법」에 따른 난민인정자 포함(난민인정 신청에 대한 심사 진행 중인 경우 등은 제외)&#13; - 「재한외국인처우기본법」에 따른 특별기여자 포함&#13;「주민등록법」에 따른 주민등록번호가 정상적으로 부여된 아동&#13; - 사회복지 전산…"
  },
  {
   "id": "WLF00005031",
@@ -1019,7 +1265,10 @@ const EXTRA_PROGRAMS = [
   "target": "장애인",
   "theme": "생활지원,보호·돌봄",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005031&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005031&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "6세 이상 65세 미만의 장애인복지법상 등록된 지적 및 자폐성 장애인을 대상으로 합니다.&#13;발달장애인 보호자가 긴급한 상황(병원 입원, 경조사, 신체적 심리적 소진 등)에 처한 경우 일시적(7일 이내)으로 24시간 돌봄을 지원합니다.&#13;이용 사유 및 이용사유별 이용기간은 다음과 같습니다.&#13;이용 기간 : 1회 이용시 최대 7일 이용가능하며, 연간 최대 30일을 초과하지 못함&#13;이용 사유 : 치료ㆍ입원, 경조사, 심리적 소진, 재난재해&#13;이용 사유 별 증빙 서류 제출해야하며, 갑작스러운 입원, 가족의 사망…",
+  "content": "일상 생활 지원, 낮 활동 프로그램 지원, 야간 돌봄 지원, 식사 지원, 상담 및 정보 제공 등의 서비스를 제공합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00000098",
@@ -1030,7 +1279,10 @@ const EXTRA_PROGRAMS = [
   "target": "보훈대상자",
   "theme": "생활지원",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000098&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000098&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "재가복지서비스 지원 대상은 다음과 같습니다.&#13;(본인) 독립유공자, 국가유공자, 보훈보상대상자, 5.18민주유공자, 특수임무유공자, 참전유공자, 고엽제후유의증환자&#13;(유족)&#13;-「국가유공자 등 예우 및 지원에 관한 법률」 제4조 제1항에 따른 국가유공자 유족 중 배우자 또는 부모&#13;- 보훈보상대상자, 5.18민주유공자, 특수임무유공자의 배우자 또는 부모&#13;- 독립유공자 자녀 및 손자녀- 참전유공자 및 고엽제후유의증환자의 배우자&#13;",
+  "content": "재가보훈실무관 방문 등 국가유공자 재가복지를 제공합니다.&#13;집안 청소 등 환경정리, 세탁 등 가사활동을 지원합니다.&#13;신체청결, 식사수발, 말벗, 치매예방 등 건강관리를 지원합니다.&#13;산책, 심부름 등 외부활동 편의를 지원합니다.&#13;고령의 국가보훈 대상자에게 노인 생활지원용품을 지원합니다&#13;기타 지역사회와 연계하여 복지를 지원합니다.&#13;",
+  "criteria": "65세 이상으로 노인성 질환 또는 상이처 등으로 거동이 불편하여 정상적 일상생활 수행이 곤란한 자 중 다음 요건을 모두 충족하는 자&#13;독거 또는 노인부부세대&#13;생활정도가 국가보훈부장이 정한 생활 수준에 해당되는 자&#13;- 기초생활수급자, 의료급여수급자, 차상위계층해당자, 75세이상 기초연금수급자, 생활조정수당대상자&#13;- 이 외에 부양의무자가 없는 경우 기준소득 160%이하자(1인 기준 3,827,221원)※ 애국지사와 애국지사의 수권 배우자, 1급 중상이자 본인의 경우 생활등급에 관계없이 지원 가능&#13;65세…"
  },
  {
   "id": "WLF00000026",
@@ -1041,7 +1293,10 @@ const EXTRA_PROGRAMS = [
   "target": "장애인,저소득",
   "theme": "생활지원,일자리,서민금융",
   "apply": "Y",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000026&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000026&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "가구의 소득인정액이 「국민기초생활보장법」에 의한 기준중위소득 50% 초과 100% 이하 가구의 19세 이상의 등록장애인을 지원합니다.* 2025년 기준, 4인 가구 기준 3,048,887원 초과 6,097,773원 이하&#13;자격제한 : 대여희망자 또는 보증인이 융자기관 내규 여신 취급제한자(금융채무불이행자, 신용회복중인 자, 개인회생 및 파산·면책자)인 경우는 대여불가 또는 보증자격 불가&#13;중위소득 50%이하의 장애인의 경우, 미소금융재단의 장애인대출 상품을 이용할 수 있습니다(서비스내용 동일).&#13;시군구에서 장애인자…",
+  "content": "장애인자립자금대여 융자요건 및 상환방법은 다음과 같습니다.&#13;(대여목적) 생업자금, 생업용 자동차 구입비, 출퇴근용 자동차 구입비*, 취업 기술훈련비, 장애인보조기기 구입비, 자기개발 훈련비, 의료비 등※ 생활가계자금, 주택전세자금, 학자금 등의 용도로 융자 불가&#13;(대여한도)&#13; - 무보증대출 : 가구당 1,200만원 이내(자동차 구입 자금은 특수설비 부착 시 1,500만원 이내)&#13; * 요건 : 기존 대출금 2,000만원 이하 이면서, 연간 재산세 2만원 이상 납부 또는 연간소득 600만원 이상 - 담보대출…",
+  "criteria": "지원대상을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00000815",
@@ -1052,7 +1307,10 @@ const EXTRA_PROGRAMS = [
   "target": "다문화·탈북민",
   "theme": "주거",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000815&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000815&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "「북한이탈주민법」 제8조(보호결정 등)에 의해 탈북민으로 보호결정된 자 및 제9조(보호결정의 기준) 제3항 제1호에 의거 보호대상자로 결정되지 아니한 사람 중,&#13;「북한이탈주민법」 제9조 제1항 제4호 및 제5호에 해당하는 자&#13;",
+  "content": "보호결정에 의거 단독세대 및 가족세대(동반입국)로 결정된 자 중 북한이탈주민정착지원 사무소(하나원)에서 교육(3개월)중인 북한이탈주민으로부터 희망지역을 접수하여 하나원 수료 후 거주할 임대주택(LH,SH 등) 알선합니다.&#13;",
+  "criteria": "하나원 교육기간 중 다음 단계에 따라 주택알선을 통해 주택을 배정합니다. &#13;(1단계) 하나원 입소후 1개월을 전후하여 보호여부 결정&#13;(2단계) SH 등 임대주택 사업자와 협의를 통해 지역별 입주가능 공가세대 확정&#13;(3단계) 개인별 희망지역을 접수받아 배정(경합지역의 경우 추첨)&#13;"
  },
  {
   "id": "WLF00001098",
@@ -1063,7 +1321,10 @@ const EXTRA_PROGRAMS = [
   "target": "다문화·탈북민,저소득,한부모·조손",
   "theme": "정신건강,생활지원,안전·위기,보호·돌봄",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001098&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001098&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "취약·위기가족을 대상으로 지원합니다.&#13;(손)자녀를 둔 한부모‧조손가족, 1인가구, 다문화가족 등 가족기능 강화를 위해 지원이 필요한 모든가족&#13;재난, 사고 등 경제‧사회적 위기사건을 직면한 위기가족&#13;",
+  "content": "취약·위기가족이 가족기능을 회복하고 정서·경제적 자립역량을 강화할 수 있도록 다음의 서비스를 제공합니다.&#13;가족상담 : 부모-자녀상담, 부부상담, 임신갈등상담, 이혼 전·후 상담 등&#13;사례관리 : 대상자의 정책 욕구와 강점 사정을 기반으로 서비스 계획 수립 후 대상자에게 적합한 서비스와 자원을 확보하여 지원인력파견, 정보제공, 지역사회 자원 활용·연계 등 직·간접 서비스 지원&#13;교육·문화 프로그램 및 자조모임 : 가족관계 향상을 위한 교육·문화프로그램(부모교육, 가족캠프 등) 및 자조모임 등 사회적 관계망 형성 지원…",
+  "criteria": "취약가족 : 한부모가족, 조손가족, 노부모 부양가족, 손자녀 돌봄 조부모, 청소년(한)부모, 1인가구, 다문화가족, 방임(보호)아동 및 원가정, 이혼 위기 가족 등 가족기능 및 역량 강화를 위해 지원이 필요한 모든 가족&#13; ※ 지자체와 협의하여 기준 중위소득 100% 이하(조정 가능) 우선 지원 가능 ※ 가족상담의 경우 모든 가족을 대상으로 진행&#13;기준에 적합한 대상자 중에서 지원이 필요하다고 판단되는 가구&#13; ※ 자립의지가 있는 비수급·저소득 가구 우선 지원 ※ 「세월호피해구제및지원특별법」 제29조에 따라 친권자가…"
  },
  {
   "id": "WLF00000751",
@@ -1074,7 +1335,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "생활지원,문화·여가,보호·돌봄",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000751&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000751&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "9~24세 가정 밖 청소년을 대상으로 지원합니다.&#13;",
+  "content": "가정 밖 청소년들이 머무르며 생활을 할 수 있는 청소년쉼터 입소를 지원하여, 생활보호(의･식･주), 정서적 지지 및 심리상담, 의료지원, 학업복귀, 취업지원 등 맞춤형 서비스를 제공합니다.&#13;자립준비청소년이 안정적으로 자립하여 생활할 수 있는 능력과 여건을 갖추도록 사례관리와 주거지원을 기반으로 경제적 지원, 소득･생계･금융지원, 교육･진학지원, 취업･훈련지원, 건강･일상지원을 개인별 맞춤형으로 제공합니다.&#13;",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00000077",
@@ -1085,7 +1349,10 @@ const EXTRA_PROGRAMS = [
   "target": "",
   "theme": "신체건강,생활지원,보호·돌봄",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000077&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000077&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "원폭 피해자를 지원합니다. (1945년 8월 제2차 세계대전 당시 일본히로시마와 나가사키에 투하된 원자폭탄에 피폭된 후 귀국한 한국인 피해자)&#13;",
+  "content": "매달 10만원의 진료보조비를 지급합니다. (합천원폭피해자복지회관에 입소자는 매달 5만원 지급)&#13;건강수첩 미소지자에 대해, 진료비 본인부담금 전액을 지원합니다.&#13;원폭 피해자가 사망 시 유족에게 장제비 210만원을 지급합니다.&#13;",
+  "criteria": "대한적십자사에 등록된 원폭피해자를 지원합니다.&#13;일본정부에서 인정한 원폭피해자 등록증 소지자(건강수첩 소지)와 대한적십자사에서 관리하는 원폭피해자(건강수첩 미소지자)를 지원합니다.&#13;"
  },
  {
   "id": "WLF00000049",
@@ -1096,7 +1363,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득",
   "theme": "생활지원,에너지",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000049&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000049&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "저소득층&#13;「국민기초생활보장법」제7조(급여의 종류)에 따른 생계·의료·주거·교육 급여 수급권자의 가구 및 차상위계층&#13;공공주택 특별법 시행령 제2조(공공임대주택) 중 영구임대주택&#13;사회복지시설&#13;「사회복지사업법」제34조(사회복지시설의 설치)에 따라 설치.운영하는 시설 * 영구임대주택의 경우, 단지 단위로 협약 체결 후 지원 가능하며, 주차장 등 공용 이용 공간 포함 필요 시 사전 협의 필요&#13;",
+  "content": "저효율 조명기기(백열전구, 형광등, 다운라이트 등)를 고효율 조명기기(LED)로 교체합니다. ※ 교체비용 100% 무상지원(조명 교체 공사 포함) &#13;",
+  "criteria": "사업 주관기관(지방자치단체)에서 지원 가구(시설)를 선정합니다.&#13;지원 제외 기준은 다음과 같습니다. &#13;시설건축년도가 5년이 경과하지 않은 시설&#13;전기시설 리모델링 계획 또는 이전계획이 있는 시설&#13;최근 5년 이내 교체한 조명(국비, 지방비, 자비, 후원 등)&#13;기타 해당 가구(시설)의 조명을 교체할 경우, 자원의 낭비가 발생할 경우&#13;"
  },
  {
   "id": "WLF00001128",
@@ -1107,7 +1377,10 @@ const EXTRA_PROGRAMS = [
   "target": "저소득",
   "theme": "생활지원,주거,에너지",
   "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001128&amp;wlfareInfoReldBztpCd=01"
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001128&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "기초생활수급가구, 차상위계층, 복지사각지대(기초지자체 추천), 사회복지시설 등을 대상으로 지원합니다.&#13;지원제외 : 수선유지비 지급 대상가구(「주거급여법」 제8조), 공공임대주택 가구(단, 기존주택 전세임대주택은 지원가능), 동사업을 지원받은지 2년이 경과되지 않은 가구&#13;",
+  "content": "에너지 사용환경 개선을 위해 다음을 지원합니다.&#13;(난방지원) 단열ˑ창호ˑ바닥공사 및 보일러 보급을 통해 난방 에너지 사용환경 개선&#13;(냉방지원) 기후위기에 취약한 에너지이용 소외계층에 고효율 에어컨 보급ˑ설치 지원&#13;세부 지원 내용은 다음과 같습니다.&#13;(단열공사) 외기에 노출되는 공간(벽면, 천장 등)에 단열성능을 가진 재료를 설치하여 열손실 및 유출을 차단&#13;(창호공사) 낡거나 뒤틀림 등에 의해 외기 유입 및 단열성능이 저하된 창문, 방문 등을 PVC창호로 교체하여 기밀성 강화&#13;(바닥공사) 보…",
+  "criteria": "지원대상의 내용을 참고해주시기 바랍니다.&#13;"
  },
  {
   "id": "WLF00003220",
@@ -1473,17 +1746,6 @@ const EXTRA_PROGRAMS = [
   "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005026&amp;wlfareInfoReldBztpCd=01"
  },
  {
-  "id": "WLF00006248",
-  "name": "직장인 든든한 한끼",
-  "summary": "직장인 점심값 부담 완화 및 지역 외식 경제 활성화를 위해 중소기업 재직 근로자 대상 점심 외식비용의 일부를 지원합니다.",
-  "agency": "농림축산식품부",
-  "life": "청년,중장년,노년",
-  "target": "",
-  "theme": "신체건강",
-  "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006248&amp;wlfareInfoReldBztpCd=01"
- },
- {
   "id": "WLF00005858",
   "name": "임신 사전건강관리 지원사업",
   "summary": "임신 및 출산에 장애가 될 수 있는 건강위험요인의 조기 발견 기회를 제공하고, 임신전 건강관리를 위한 의료.보건학적 지원을 통해 건강한 임신 출산 환경을 조성합니다.",
@@ -1658,17 +1920,6 @@ const EXTRA_PROGRAMS = [
   "theme": "",
   "apply": "N",
   "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006265&amp;wlfareInfoReldBztpCd=01"
- },
- {
-  "id": "WLF00005631",
-  "name": "아가와 엄마를 위한 무료 공익보험(우체국대한민국 엄마보험)",
-  "summary": "자녀의 희귀질환과 엄마의 임신질환을 보장하는 공익보험으로 별도의 조건없이 국가(우체국)에서 보험료 전액을 지원합니다.",
-  "agency": "과학기술정보통신부",
-  "life": "영유아,아동,임신 · 출산",
-  "target": "",
-  "theme": "임신·출산,보육",
-  "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005631&amp;wlfareInfoReldBztpCd=01"
  },
  {
   "id": "WLF00003211",
@@ -4320,17 +4571,6 @@ const EXTRA_PROGRAMS = [
   "theme": "신체건강,정신건강,입양·위탁,서민금융",
   "apply": "N",
   "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001121&amp;wlfareInfoReldBztpCd=01"
- },
- {
-  "id": "WLF00001136",
-  "name": "보험급여(건강보험 장애인보조기기)",
-  "summary": "건강보험가입자 및 피부양자 중 「장애인복지법」에 따라 등록한 장애인이 장애인보조기기를 구입할 경우 구입금액 일부를 지원합니다.",
-  "agency": "보건복지부",
-  "life": "",
-  "target": "장애인",
-  "theme": "신체건강",
-  "apply": "N",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001136&amp;wlfareInfoReldBztpCd=01"
  },
  {
   "id": "WLF00000781",
