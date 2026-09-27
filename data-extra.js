@@ -1,7 +1,33 @@
 // 자동 생성 파일 — 직접 수정 금지 (scripts/fetch-data.mjs가 갱신)
 // 출처: 복지로 중앙부처복지서비스 (한국사회보장정보원, data.go.kr) — 원문 인용
-// 갱신: 2026-09-20 / 목록 461건, 상세 461건
+// 갱신: 2026-09-27 / 목록 461건, 상세 461건
 const EXTRA_PROGRAMS = [
+ {
+  "id": "WLF00001175",
+  "name": "자립준비청년 자립수당 지급",
+  "summary": "자립준비청년(보호종료아동)에게 자립수당을 지급하여 보호종료 후 경제적 부담을 완화하고 복지향상을 통해 안정적 사회정착 및 성공적 자립을 지원합니다.",
+  "agency": "보건복지부",
+  "life": "청소년,청년",
+  "target": "",
+  "theme": "생활지원",
+  "apply": "Y",
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001175&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "아동복지시설*, 가정위탁 보호종료 5년 이내 자립준비청년(보호종료아동)을 지원합니다.* 「아동복지법」 제52조 아동양육시설, 아동일시보호시설, 아동보호치료시설, 공동생활가정&#13;",
+  "content": "자립수당 결정 대상자 명의 계좌로 매월 50만원을 지급합니다.&#13;"
+ },
+ {
+  "id": "WLF00001104",
+  "name": "한부모가족자녀 교육비 지원",
+  "summary": "한부모가족보호대상자에게 고교비(학비)를 지원합니다.",
+  "agency": "교육부",
+  "life": "아동,청소년",
+  "target": "저소득,한부모·조손",
+  "theme": "교육",
+  "apply": "Y",
+  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001104&amp;wlfareInfoReldBztpCd=01",
+  "target_detail": "초중고에 재학 중인 한부모가족 보호대상자(한부모가족지원법상 한부모가족)를 대상으로 합니다.&#13;",
+  "content": "초중고 입학금과 수업료를 지원합니다.&#13;"
+ },
  {
   "id": "WLF00003256",
   "name": "외국인근로자 등 의료지원",
@@ -380,19 +406,6 @@ const EXTRA_PROGRAMS = [
   "content": "취업 부모 등의 12세 이하 자녀에 대해, 아이돌보미가 대상자의 집으로 찾아가 돌봄서비스를 제공합니다. &#13;시간제 아이돌봄: 부모가 올 때까지 임시보육, 놀이 활동, 보육시설 및 초등학교 등하원(교) 동행, 준비된 식사와 간식 챙겨주기 등의 서비스 제공 ＊ 영아를 대상으로 시간제 돌봄 시, 영아 종일제 아이돌봄 업무 병행&#13;영아 종일제 아이돌봄: 이유식 먹이기, 젖병 소독, 기저귀 갈기, 목욕 등의 서비스 지원&#13;2026년 아이돌봄 서비스의 1시간 당 정부지원금은 아래와 같습니다.&#13; ＊ A형: '19.1.1.…"
  },
  {
-  "id": "WLF00001175",
-  "name": "자립준비청년 자립수당 지급",
-  "summary": "자립준비청년(보호종료아동)에게 자립수당을 지급하여 보호종료 후 경제적 부담을 완화하고 복지향상을 통해 안정적 사회정착 및 성공적 자립을 지원합니다.",
-  "agency": "보건복지부",
-  "life": "청소년,청년",
-  "target": "",
-  "theme": "생활지원",
-  "apply": "Y",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001175&amp;wlfareInfoReldBztpCd=01",
-  "target_detail": "아동복지시설*, 가정위탁 보호종료 5년 이내 자립준비청년(보호종료아동)을 지원합니다.* 「아동복지법」 제52조 아동양육시설, 아동일시보호시설, 아동보호치료시설, 공동생활가정&#13;",
-  "content": "자립수당 결정 대상자 명의 계좌로 매월 50만원을 지급합니다.&#13;"
- },
- {
   "id": "WLF00003271",
   "name": "내집마련 디딤돌 대출",
   "summary": "무주택 세대주가 주택구입 자금을 빌릴 수 있도록 지원하여 주거 안정을 돕습니다.",
@@ -625,19 +638,6 @@ const EXTRA_PROGRAMS = [
   "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001109&amp;wlfareInfoReldBztpCd=01",
   "target_detail": "아동을 양육하는 부 또는 모가 24세 이하이면서 기준 중위소득 65% 이하인 한부모 가구를 지원합니다.&#13;",
   "content": "(아동양육비) 아동 1인당 월 37만원(0~1세 영아) 또는 40만원(2세 이상 자녀) 지급&#13;(검정고시 등 학습지원) 청소년 한부모가 검정고시를 준비하는 경우 등 학원비, 교재비, 학용품비, 교통비, 교복구입비 등을 가구당 연 154만원 한도 내에서 지원&#13;(자립촉진수당) 취업, 학업 등 자립활동에 참여하는 청소년한부모 가구당 월 10만원 지원&#13;"
- },
- {
-  "id": "WLF00001104",
-  "name": "한부모가족자녀 교육비 지원",
-  "summary": "한부모가족보호대상자에게 고교비(학비)를 지원합니다.",
-  "agency": "교육부",
-  "life": "아동,청소년",
-  "target": "저소득,한부모·조손",
-  "theme": "교육",
-  "apply": "Y",
-  "link": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001104&amp;wlfareInfoReldBztpCd=01",
-  "target_detail": "초중고에 재학 중인 한부모가족 보호대상자(한부모가족지원법상 한부모가족)를 대상으로 합니다.&#13;",
-  "content": "초중고 입학금과 수업료를 지원합니다.&#13;"
  },
  {
   "id": "WLF00001089",
