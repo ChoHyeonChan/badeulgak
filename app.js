@@ -168,7 +168,8 @@
     }
     if (p.incomes.length && p.incomes.includes(state.income)) {
       score += 2;
-      reasons.push("income");
+      // "잘 모르겠음"은 순위에만 쓴다. 소득을 모르는데 요건을 충족한다고 말하면 안 된다
+      if (state.income !== "unknown") reasons.push("income");
     }
     // 소득 미상으로 통과한 경우: 순위는 낮추되 후보로는 남긴다
     const incomeUnverified =
@@ -295,7 +296,7 @@
     const agencies = [...new Set(results.map((r) => r.program.agency))];
     return `${profile}${income ? ` (${income})` : ""}${child} 상황을 분석했어요. ${concern}` +
       `${agencies.slice(0, 3).join("·")} 등 ${agencies.length}개 기관의 제도 중에서 ` +
-      `지금 조건이 맞는 ${results.length}개를 골랐어요. 위에서부터 매칭 점수가 높은 순서예요.`;
+      `${state.income === "unknown" ? "소득을 뺀 나머지 조건이 맞는" : "지금 조건이 맞는"} ${results.length}개를 골랐어요. 위에서부터 매칭 점수가 높은 순서예요.`;
   }
 
   let lastResults = []; // 복사·인쇄용으로 마지막 결과를 보관 (브라우저 메모리에만 존재)
