@@ -235,7 +235,7 @@
     setTimeout(() => {
       clearInterval(interval);
       // 자격을 통과한 제도만 점수로 정렬해 보여준다. 개수를 채우려고 자격 미달 제도를
-      // 끼워 넣지 않는다 — "지금 신청 가능한 혜택"이라 해놓고 못 받는 걸 보여주면 신뢰가 깨진다.
+      // 끼워 넣지 않는다 — "신청 자격에 맞는 혜택"이라 해놓고 못 받는 걸 보여주면 신뢰가 깨진다.
       const results = PROGRAMS.filter(isEligible)
         .map(scoreProgram)
         .sort((a, b) => b.score - a.score)
